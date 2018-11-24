@@ -1,0 +1,103 @@
+<!--
+Generated template for the ExpedienteEditPage page.
+
+See http://ionicframework.com/docs/components/#navigation for more info on
+Ionic pages and navigation.
+-->
+
+<p *ngIf="submitAttempt" style="color: #ea6153;">Por favor, rellena todos los campos corectamente</p>
+<ion-content padding class="form-content">
+  <div class="wrapper">
+    <form class="form-app" [formGroup]="expedienteForm">
+      <ion-row>
+        <ion-col>
+          <h2 class="text-center">Formulario Expediente</h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-input class="form-control" placeholder="Empresa" formControlName="empresa" type="text" autocapitalize="off" maxlength="70"
+            [class.invalid]="!expedienteForm.controls.empresa.valid && (expedienteForm.controls.empresa.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+
+          <ion-item class="invalid" *ngIf="!expedienteForm.controls.empresa.valid  && (expedienteForm.controls.empresa.dirty || submitAttempt)">
+            <p style="color: #ea6153;">Campo empresa es requerido</p>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-input class="form-control" placeholder="Nº Expediente" formControlName="numExpediente" type="text" autocapitalize="off" maxlength="35"
+            [class.invalid]="!expedienteForm.controls.numExpediente.valid && (expedienteForm.controls.numExpediente.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+
+          <ion-item class="invalid" *ngIf="!expedienteForm.controls.numExpediente.valid  && (expedienteForm.controls.numExpediente.dirty || submitAttempt)">
+            <p style="color: #ea6153;">Campo Número de Expediente es requerido</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-input class="form-control" placeholder="Nº Conocimiento" formControlName="numConocimiento" type="text" autocapitalize="off" maxlength="35"
+          [class.invalid]="!expedienteForm.controls.numConocimiento.valid && (expedienteForm.controls.numConocimiento.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item class="invalid" *ngIf="!expedienteForm.controls.numConocimiento.valid  && (expedienteForm.controls.numConocimiento.dirty || submitAttempt)">
+          <p style="color: #ea6153;">Campo Número de Conocimiento es requerido</p>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-input class="form-control" placeholder="Referencia" formControlName="referencia" type="text" autocapitalize="off" maxlength="35"
+            [class.invalid]="!expedienteForm.controls.referencia.valid && (expedienteForm.controls.referencia.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+
+          <ion-item class="invalid" *ngIf="!expedienteForm.controls.referencia.valid  && (expedienteForm.controls.referencia.dirty || submitAttempt)">
+            <p style="color: #ea6153;">Campo Referencia es requerido</p>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-datetime class="form-control" placeholder="Fecha de Vuelo" formControlName="fechaVuelo" type="date" autocapitalize="off" maxlength="10" displayFormat="DD/MM/YYYY" doneText="Hecho" cancelText="Cancelar"></ion-datetime>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-input class="form-control" placeholder="Partida" formControlName="partida" type="text" autocapitalize="off" maxlength="16"
+            [class.invalid]="!expedienteForm.controls.partida.valid && (expedienteForm.controls.partida.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+
+          <ion-item class="invalid" *ngIf="!expedienteForm.controls.partida.valid  && (expedienteForm.controls.partida.dirty || submitAttempt)">
+            <p style="color: #ea6153;">Campo Partida es requerido</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <br/>
+          <br/>
+          <br/>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+        </ion-col>
+
+        <ion-col class="signup-col">
+          <button ion-button class="expediente-btn" block clear  (click)="saveExpediente()">Guardar</button>
+        </ion-col>
+
+        <ion-col class="signup-col">
+          <button ion-button class="close-btn" block clear  (click)="close()">Cerrar</button>
+        </ion-col>
+
+        <ion-col class="signup-col">
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

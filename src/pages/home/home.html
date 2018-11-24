@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar class="home-navbar">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      <img class="logo" src="assets/imgs/duaexpress.png"/>
+    </ion-title>
+
+    <ion-buttons end>
+      <button class="home-button" ion-button (click)="home()">Home</button>
+
+      <button class="home-button" ion-button (click)="records()">Expedientes</button>
+
+      <button class="home-button" ion-button (click)="users()">Usuarios</button>
+
+      <button class="home-button" ion-button (click)="logout()">Desconectar</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>

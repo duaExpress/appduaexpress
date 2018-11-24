@@ -1,0 +1,30 @@
+page-register {
+
+  .login-content {
+    background: #eee !important;
+  }
+
+  .form-title {
+    text-align: center;
+    padding: 12px;
+    background-color: steelblue;
+    & .toolbar-title-md {
+      font-size: 3rem !important;
+    }
+  }
+
+  .close-btn {
+    color: red;
+  }
+
+  .register-btn {
+    color: #5CB85C;
+  }
+
+  .wrapper {
+    & form {
+      width: 600px;
+    }
+  }
+
+}

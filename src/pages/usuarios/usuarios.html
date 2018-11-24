@@ -1,0 +1,14 @@
+
+<page-home></page-home>
+
+<ion-content class="top120" padding>
+  <div class="module-title">
+    <h2>Usuarios</h2>
+  </div>
+
+  <div>
+    <ng2-smart-table (editConfirm)="updateUser($event)" (deleteConfirm)="deleteUser($event)"  (userRowSelect)="editUser($event)"
+      [settings]="settings" [source]="users | async">
+  </ng2-smart-table>
+  </div>
+</ion-content>
