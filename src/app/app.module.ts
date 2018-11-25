@@ -15,7 +15,6 @@ import { EntregaDocumentacionPage } from '../pages/expedientes/entrega-documenta
 
 import { ExpedienteEditPage } from '../pages/expediente-edit/expediente-edit';
 import { RegisterPage } from '../pages/register/register';
-import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -54,7 +53,6 @@ export const firebaseConfig = {
     LoginPage,
     UsuariosPage,
     RegisterPage,
-    ListPage,
     LogoutPage
   ],
   imports: [
@@ -75,7 +73,6 @@ export const firebaseConfig = {
     LoginPage,
     UsuariosPage,
     RegisterPage,
-    ListPage,
     LogoutPage
   ],
   providers: [
