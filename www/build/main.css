@@ -25887,6 +25887,11 @@ a.sort.desc::after {
   contain: strict;
 }
 
+button:hover {
+  background-color: #9A0C51 !important;
+  color: #FBBC05 !important;
+}
+
 page-expediente-edit .close-btn {
   color: red;
 }
@@ -26064,10 +26069,9 @@ page-home .home-navbar {
   height: 100px;
 }
 
-page-home .home-button {
-  border: solid 1px #9A0C51;
-  color: #FBBC05;
-  background-color: #9A0C51;
+page-home button:hover {
+  background-color: #9A0C51 !important;
+  color: #FBBC05 !important;
 }
 
 page-login .logo {

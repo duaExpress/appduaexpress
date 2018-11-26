@@ -11,7 +11,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { LogoutPage } from '../pages/logout/logout';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;

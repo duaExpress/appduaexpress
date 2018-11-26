@@ -36,7 +36,7 @@
     border: 1px solid rgba(0,0,0,0.1);
   }
 
- .form-control {
+.form-control {
 	 position: relative;
 	 font-size: 16px;
 	 height: auto;
@@ -64,4 +64,9 @@
     width: 300px;
     contain: strict;
   }
+}
+
+button:hover {
+  background-color: #9A0C51 !important;
+  color: #FBBC05 !important;
 }

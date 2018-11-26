@@ -72,6 +72,7 @@ export class ExpedientesPage {
     attr: {
       class: 'table table-bordered'
     },
+    noDataMessage: '',
   };
 
   expedientes: Observable<Expediente[]>;

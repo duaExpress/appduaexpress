@@ -89,6 +89,7 @@ export class UsuariosPage {
     attr: {
       class: 'table table-bordered'
     },
+    noDataMessage: '',
   };
 
   users: Observable<User[]>;

@@ -9,9 +9,10 @@ page-home {
     height: 100px;
   }
 
-  .home-button {
-    border: solid 1px #9A0C51;
-    color: #FBBC05;
-    background-color: #9A0C51;
+  .home-button {}
+
+  button:hover {
+    background-color: #9A0C51 !important;
+    color: #FBBC05 !important;
   }
 }
