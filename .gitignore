@@ -44,4 +44,6 @@ package-lock.json
 Thumbs.db
 
 www
+www/*
+/www
 .sourcemaps
