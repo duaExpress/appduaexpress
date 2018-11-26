@@ -4,15 +4,76 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>aereo-despacho</ion-title>
-  </ion-navbar>
-
-</ion-header>
+<page-home></page-home>
 
 
 <ion-content padding>
+
+
+  <div class = "tabinator">
+
+    <div class="module-title">
+          <h2>Despacho Aereo</h2>
+    </div>
+
+
+    <input type = "radio" id = "tabExpediente" name = "tabs" checked>
+    <label for = "tabExpediente">Expediente</label>
+    <input type = "radio" id = "tabFichCli" name = "tabs">
+    <label for = "tabFichCli">Ficheros Cliente</label>
+    <input type = "radio" id = "tabFichAdmin" name = "tabs">
+    <label for = "tabFichAdmin">Ficheros Admin</label>
+    <input type = "radio" id = "tabIndicaciones" name = "tabs">
+    <label for = "tabIndicaciones">Indicaciones</label>
+    <input type = "radio" id = "tabIncidencias" name = "tabs">
+    <label for = "tabIncidencias">Incidencias</label>
+    <input type = "radio" id = "tabVeriValor" name = "tabs">
+    <label for = "tabVeriValor">Verificaci&oacute;n Valor</label>
+    <input type = "radio" id = "tabVerIva" name = "tabs">
+    <label for = "tabVerIva">Verificaci&oacute;n IVA</label>
+    <input type = "radio" id = "tabVerExp" name = "tabs">
+    <label for = "tabVerExp">Verificaci&oacute;n Exp</label>
+    <input type = "radio" id = "tabServicios" name = "tabs">
+    <label for = "tabServicios">Servicios</label>
+
+    <div id = "content_Expediente">
+      <p>Aqui va el formulario
+      </p>
+    </div>
+    <div id = "content_FichCli">
+      <p>
+        Fichero del Cliente
+      </p>
+    </div>
+    <div id = "content_FichAdmin">
+      <p>Ficheros Admin
+
+      </p>
+    </div>
+    <div id = "content_Indicaciones">
+      <p>Indicaciones
+      </p>
+    </div>
+    <div id = "content_Incidencias">
+        <p>Aqui van las incidencias
+        </p>
+    </div>
+    <div id = "content_VerValor">
+        <p>Verificacion Valor
+        </p>
+    </div>
+    <div id = "content_VerIVA">
+        <p>Verificacion IVA
+        </p>
+    </div>
+    <div id = "content_VerExp">
+        <p>Verificacion Exp
+        </p>
+    </div>
+    <div id = "content_Servicios">
+        <p>Servicios
+        </p>
+    </div>
+  </div>
 
 </ion-content>

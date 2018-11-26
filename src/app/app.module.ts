@@ -76,6 +76,7 @@ export const firebaseConfig = {
     UsuariosPage,
     RegisterPage,
     ListPage,
+    AereoDespachoPage,
     LogoutPage
   ],
   providers: [

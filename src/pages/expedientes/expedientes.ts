@@ -6,6 +6,7 @@ import { ExpedienteService } from '../../services/expediente.services';
 import { Observable } from 'rxjs';
 import { ExpedienteEditPage } from '../expediente-edit/expediente-edit';
 import { ExpedienteSubTipo } from '../../models/global.enum';
+import { AereoDespachoPage } from '../expedientes/aereo-despacho/aereo-despacho';
 
 interface ExpTipo {
   id:string;
@@ -88,7 +89,7 @@ export class ExpedientesPage {
   ionViewDidLoad() {}
 
   public newExpediente(event) {
-    this.navCtrl.push(ExpedienteEditPage,{});
+    this.navCtrl.setRoot(AereoDespachoPage);
   }
 
   public editExpediente(event) {
