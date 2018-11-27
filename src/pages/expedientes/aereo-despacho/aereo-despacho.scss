@@ -18,9 +18,10 @@ body {
   text-align: center;
   margin-bottom: 60px;
 }
-.tabinator input {
-  display: none;
+.tabinator input[type="radio"] {
+  display:none;
 }
+
 .tabinator label {
   box-sizing: border-box;
   display: inline-block;

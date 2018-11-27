@@ -37,7 +37,10 @@
     <label for = "tabServicios">Servicios</label>
 
     <div id = "content_Expediente">
-      <p>Aqui va el formulario
+      <p>
+
+          <input type="text" placeholder="Fecha" [(ngModel)]="fechaCreacion" class="form-control" #dp="bsDatepicker"
+          bsDatepicker [bsConfig]="bsConfig" required />
       </p>
     </div>
     <div id = "content_FichCli">

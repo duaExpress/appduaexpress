@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BsLocaleService } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 /**
  * Generated class for the AereoDespachoPage page.
@@ -15,7 +17,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AereoDespachoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  colorTheme = 'theme-green';
+  bsConfig: Partial<BsDatepickerConfig>;
+  dateFormat = 'DD-MMM-YYYY';
+  fechaCreacion: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private localeService: BsLocaleService) {
+    this.bsConfig = Object.assign({}, {
+      containerClass: this.colorTheme,
+      dateInputFormat: this.dateFormat
+    });
   }
 
   ionViewDidLoad() {

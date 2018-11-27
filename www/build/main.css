@@ -25985,7 +25985,7 @@ page-aereo-despacho .tabinator h2 {
   margin-bottom: 60px;
 }
 
-page-aereo-despacho .tabinator input {
+page-aereo-despacho .tabinator input[type="radio"] {
   display: none;
 }
 
