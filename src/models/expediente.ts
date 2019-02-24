@@ -61,7 +61,9 @@ export class Expediente{
 	destino: string;
 	consignatario: string;
 	contenedores: string;
-	mercancia: string;
+  mercancia: string;
+
+  instrucciones: string;
 
 	ExpedienteVerificacion: ExpedienteVerificacion;
 
