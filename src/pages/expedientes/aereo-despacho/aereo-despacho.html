@@ -1,14 +1,7 @@
-<!--
-  Generated template for the AereoDespachoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <page-home></page-home>
 
 
 <ion-content padding>
-
 
   <div class = "tabinator">
 
@@ -39,8 +32,39 @@
     <div id = "content_Expediente">
       <p>
 
-          <input type="text" placeholder="Fecha" [(ngModel)]="fechaCreacion" class="form-control" #dp="bsDatepicker"
+
+          <span class="label-text"><B>Nº Expediente:</B></span>
+          <input type="text" [(ngModel)]="expediente.numExpediente" class="form-control" required />
+          <BR>
+
+          <span class="label-text"><B>Nº Conocimiento:</B></span>
+          <input type="text" [(ngModel)]="expediente.numConocimiento" class="form-control" required />
+
+          <span class="label-text"><B>Referencia:</B></span>
+          <input type="text" [(ngModel)]="expediente.referencia" class="form-control" required />
+
+          <span class="label-text"><B>Fecha de vuelo:</B></span>
+          <input type="text" placeholder="" [(ngModel)]="expediente.fechaVuelo" class="form-control" #dp="bsDatepicker"
           bsDatepicker [bsConfig]="bsConfig" required />
+
+          <span class="label-text"><B>Partida:</B></span>
+          <input type="text" [(ngModel)]="expediente.partida" class="form-control" required />
+
+          <BR>
+
+          <span class="label-text"><B>Peso:</B></span>
+          <input type="text" [(ngModel)]="expediente.peso" class="form-control" required />
+
+          <span class="label-text"><B>Bultos:</B></span>
+          <input type="text" [(ngModel)]="expediente.bultos" class="form-control" required />
+
+          <span class="label-text"><B>¿La mercancía va etiquetada?:</B></span>
+          <select [(ngModel)]="expediente.mercanciaEtiq" class="form-control">
+            <option>SI</option>
+            <option>NO</option>
+          </select>
+
+
       </p>
     </div>
     <div id = "content_FichCli">

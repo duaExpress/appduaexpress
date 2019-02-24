@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { ExpedienteEditPage } from '../expediente-edit/expediente-edit';
 import { ExpedienteSubTipo } from '../../models/global.enum';
 import { AereoDespachoPage } from '../expedientes/aereo-despacho/aereo-despacho';
+import { DaePage }  from '../expedientes/dae/dae';
 
 interface ExpTipo {
   id:string;
@@ -76,6 +77,7 @@ export class ExpedientesPage {
   };
 
   expedientes: Observable<Expediente[]>;
+  nuevoExpediente: String;
 
   constructor(
     public navCtrl: NavController,
@@ -90,7 +92,22 @@ export class ExpedientesPage {
   ionViewDidLoad() {}
 
   public newExpediente(event) {
-    this.navCtrl.setRoot(AereoDespachoPage);
+
+    switch(this.nuevoExpediente) {
+      case ExpedienteSubTipo.DespachoAereoExportacion: {
+        this.navCtrl.setRoot(AereoDespachoPage);
+         break;
+      }
+      case ExpedienteSubTipo.DespachoAereoImportacion: {
+         //statements;
+         break;
+      }
+      default: {
+        this.navCtrl.setRoot(DaePage);
+        break;
+      }
+   }
+
   }
 
   public editExpediente(event) {

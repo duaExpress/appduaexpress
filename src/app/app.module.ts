@@ -30,6 +30,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BsDatepickerModule } from 'ngx-bootstrap';
+import { TabsModule } from 'ngx-bootstrap';
 
 import { LogoutPage } from '../pages/logout/logout';
 
@@ -64,6 +65,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     Ng2SmartTableModule,
     NgbModule.forRoot(),
+    TabsModule.forRoot(),
     BsDatepickerModule.forRoot(),
     RouterModule,
     AngularFirestoreModule
@@ -78,6 +80,7 @@ export const firebaseConfig = {
     UsuariosPage,
     RegisterPage,
     AereoDespachoPage,
+    DaePage,
     LogoutPage
   ],
   providers: [
