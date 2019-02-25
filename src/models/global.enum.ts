@@ -10,7 +10,6 @@ export enum ExpedienteTipo {
 }
 
 export enum ExpedienteSubTipo {
-
   //Aereo
   DocEntega = 'DE',
   DespachoAereoExportacion = 'AEX',
@@ -18,7 +17,6 @@ export enum ExpedienteSubTipo {
   DocRecogida = "DR",
   DAE = "DAE",
   RevisionFisica = "RF",
-
   //Marítimo
   DespachoMaritimoExportacion = "MEX"
 }

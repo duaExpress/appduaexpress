@@ -23,12 +23,12 @@ interface ExpTipo {
 export class ExpedientesPage {
 
   expTipoArray: ExpTipo[] = [
-    {id:ExpedienteSubTipo.DespachoAereoExportacion, label:'Despacho Aéreo Exportación'},
-    {id:ExpedienteSubTipo.DespachoAereoImportacion, label:'Despacho Aéreo Importación'},
-    {id:ExpedienteSubTipo.DocEntega, label:'Entrega Documentación'},
-    {id:ExpedienteSubTipo.DocRecogida, label:'Recogida Documentos'},
-    {id:ExpedienteSubTipo.DAE, label:'DAE'},
-    {id:ExpedienteSubTipo.RevisionFisica, label:'Revisión Física'}
+    { id:ExpedienteSubTipo.DespachoAereoExportacion, label:'Despacho Aéreo Exportación' },
+    { id:ExpedienteSubTipo.DespachoAereoImportacion, label:'Despacho Aéreo Importación' },
+    { id:ExpedienteSubTipo.DocEntega, label:'Entrega Documentación' },
+    { id:ExpedienteSubTipo.DocRecogida, label:'Recogida Documentos' },
+    { id:ExpedienteSubTipo.DAE, label:'DAE' },
+    { id:ExpedienteSubTipo.RevisionFisica, label:'Revisión Física' }
   ];
 
   settings = {
@@ -87,27 +87,28 @@ export class ExpedientesPage {
     public actionSheetCtrl: ActionSheetController
   ) {
     this.expedientes = expedienteService.getExpedientes().valueChanges();
+    this.showMessage = '';
   }
 
   ionViewDidLoad() {}
 
   public newExpediente(event) {
-
-    switch(this.nuevoExpediente) {
-      case ExpedienteSubTipo.DespachoAereoExportacion: {
-        this.navCtrl.setRoot(AereoDespachoPage);
-         break;
-      }
-      case ExpedienteSubTipo.DespachoAereoImportacion: {
-         //statements;
-         break;
-      }
-      default: {
-        this.navCtrl.setRoot(DaePage);
-        break;
-      }
-   }
-
+    if (this.nuevoExpediente) {
+      switch(this.nuevoExpediente) {
+        case ExpedienteSubTipo.DespachoAereoExportacion: {
+          this.navCtrl.setRoot(AereoDespachoPage);
+          break;
+        }
+        case ExpedienteSubTipo.DespachoAereoImportacion: {
+          break;
+        }
+        default: {
+          break;
+        }
+     }
+    } else {
+      this.showMessage = 'Seleccione un tipo de expediente';
+    }
   }
 
   public editExpediente(event) {

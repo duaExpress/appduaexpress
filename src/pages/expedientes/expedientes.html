@@ -9,8 +9,12 @@
   <div>
     <button class="form-control button-new" (click)="newExpediente($event)">Nuevo Expediente</button>
     <select class="form-control" [(ngModel)]="nuevoExpediente">
-      <option *ngFor="let expTipo of expTipoArray" [ngValue]="expTipo.id">{{expTipo.label}}</option>
+      <option *ngFor="let expTipo of expTipoArray" [ngValue]="expTipo.id">{{ expTipo.label }}</option>
     </select>
+  </div>
+
+  <div *ngIf="!nuevoExpediente">
+    <span>{{ showMessage }}</span>
   </div>
 
   <div>
