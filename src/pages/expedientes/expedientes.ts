@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, AlertController } from 'ionic-angular';
 import { AngularFirestore} from 'angularfire2/firestore';
 import { Expediente } from '../../models/expediente';
 import { ExpedienteService } from '../../services/expediente.services';
@@ -84,10 +84,10 @@ export class ExpedientesPage {
     public navParams: NavParams,
     public database: AngularFirestore,
     public expedienteService : ExpedienteService,
-    public actionSheetCtrl: ActionSheetController
+    public actionSheetCtrl: ActionSheetController,
+    public alertCtrl : AlertController
   ) {
     this.expedientes = expedienteService.getExpedientes().valueChanges();
-    this.showMessage = '';
   }
 
   ionViewDidLoad() {}
@@ -107,7 +107,12 @@ export class ExpedientesPage {
         }
      }
     } else {
-      this.showMessage = 'Seleccione un tipo de expediente';
+      let alert = this.alertCtrl.create({
+        title: 'Notificación:',
+        subTitle: 'Seleccione un tipo de expediente',
+        buttons: ['Aceptar']
+      });
+      alert.present();
     }
   }
 
@@ -125,7 +130,6 @@ export class ExpedientesPage {
     } else {
       event.confirm.reject();
     }
-
   }
 
   public deleteExpediente(event) {

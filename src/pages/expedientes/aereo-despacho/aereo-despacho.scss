@@ -1,6 +1,6 @@
 page-aereo-despacho {
 
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 * {
   margin: 0;
   padding: 0;
@@ -79,6 +79,11 @@ body {
 {
   display: block;
   box-shadow: 0 0 15px #939393;
+}
+
+.label-text {
+  font-weight: bold;
+  padding: 10px;
 }
 
 }

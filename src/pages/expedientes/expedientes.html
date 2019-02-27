@@ -13,10 +13,6 @@
     </select>
   </div>
 
-  <div *ngIf="!nuevoExpediente">
-    <span>{{ showMessage }}</span>
-  </div>
-
   <div>
     <ng2-smart-table class="form-control" (editConfirm)="updateExpediente($event)" (deleteConfirm)="deleteExpediente($event)"
       (userRowSelect)="editExpediente($event)" [settings]="settings" [source]="expedientes | async">

@@ -32,15 +32,15 @@ export class LoginPage {
       })
        .catch(err => {
         let alert = this.alertCtrl.create({
-          title: 'Error',
-          subTitle: err.message,
+          title: 'Notificación:',
+          subTitle: 'Credenciales incorrectas/' + err.message,
           buttons: ['Aceptar']
         });
         alert.present();
       });
     } else {
       let alert = this.alertCtrl.create({
-         title: 'Error',
+         title: 'Notificación:',
          subTitle: "Complete Email y Password",
          buttons: ['Aceptar']
        });

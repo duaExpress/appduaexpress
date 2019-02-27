@@ -26063,6 +26063,11 @@ page-aereo-despacho #tabServicios:checked ~ #content_Servicios {
   box-shadow: 0 0 15px #939393;
 }
 
+page-aereo-despacho .label-text {
+  font-weight: bold;
+  padding: 10px;
+}
+
 page-home .logo {
   height: 100px;
   width: 300px;

@@ -66,7 +66,7 @@ var HomePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_auth__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_user__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_user__ = __webpack_require__(308);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_global_enum__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_user_services__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_home__ = __webpack_require__(110);
@@ -630,7 +630,7 @@ var UserService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_expediente__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_expediente__ = __webpack_require__(304);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_expediente_services__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__expedientes_expedientes__ = __webpack_require__(90);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -722,8 +722,8 @@ var ExpedienteEditPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AereoDespachoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_bootstrap_datepicker__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_expediente__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_bootstrap_datepicker__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_expediente__ = __webpack_require__(304);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -748,12 +748,11 @@ var AereoDespachoPage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.localeService = localeService;
-        this.colorTheme = 'theme-green';
         this.dateFormat = 'DD-MMM-YYYY';
         this.expediente = new __WEBPACK_IMPORTED_MODULE_3__models_expediente__["a" /* Expediente */]();
         this.bsConfig = Object.assign({}, {
-            containerClass: this.colorTheme,
-            dateInputFormat: this.dateFormat
+            containerClass: 'theme-green',
+            dateInputFormat: this.dateFormat,
         });
     }
     AereoDespachoPage.prototype.ionViewDidLoad = function () {
@@ -761,18 +760,127 @@ var AereoDespachoPage = /** @class */ (function () {
     };
     AereoDespachoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-aereo-despacho',template:/*ion-inline-start:"/home/alex/projects/duaexpress/appduaexpress/src/pages/expedientes/aereo-despacho/aereo-despacho.html"*/'<page-home></page-home>\n\n\n<ion-content padding>\n\n  <div class = "tabinator">\n\n    <div class="module-title">\n          <h2>Despacho Aereo</h2>\n    </div>\n\n\n    <input type = "radio" id = "tabExpediente" name = "tabs" checked>\n    <label for = "tabExpediente">Expediente</label>\n    <input type = "radio" id = "tabFichCli" name = "tabs">\n    <label for = "tabFichCli">Ficheros Cliente</label>\n    <input type = "radio" id = "tabFichAdmin" name = "tabs">\n    <label for = "tabFichAdmin">Ficheros Admin</label>\n    <input type = "radio" id = "tabIndicaciones" name = "tabs">\n    <label for = "tabIndicaciones">Indicaciones</label>\n    <input type = "radio" id = "tabIncidencias" name = "tabs">\n    <label for = "tabIncidencias">Incidencias</label>\n    <input type = "radio" id = "tabVeriValor" name = "tabs">\n    <label for = "tabVeriValor">Verificaci&oacute;n Valor</label>\n    <input type = "radio" id = "tabVerIva" name = "tabs">\n    <label for = "tabVerIva">Verificaci&oacute;n IVA</label>\n    <input type = "radio" id = "tabVerExp" name = "tabs">\n    <label for = "tabVerExp">Verificaci&oacute;n Exp</label>\n    <input type = "radio" id = "tabServicios" name = "tabs">\n    <label for = "tabServicios">Servicios</label>\n\n    <div id = "content_Expediente">\n      <p>\n\n\n          <span class="label-text"><B>Nº Expediente:</B></span>\n          <input type="text" [(ngModel)]="expediente.numExpediente" class="form-control" required />\n          <BR>\n\n          <span class="label-text"><B>Nº Conocimiento:</B></span>\n          <input type="text" [(ngModel)]="expediente.numConocimiento" class="form-control" required />\n\n          <span class="label-text"><B>Referencia:</B></span>\n          <input type="text" [(ngModel)]="expediente.referencia" class="form-control" required />\n\n          <span class="label-text"><B>Fecha de vuelo:</B></span>\n          <input type="text" placeholder="" [(ngModel)]="expediente.fechaVuelo" class="form-control" #dp="bsDatepicker"\n          bsDatepicker [bsConfig]="bsConfig" required />\n\n          <span class="label-text"><B>Partida:</B></span>\n          <input type="text" [(ngModel)]="expediente.partida" class="form-control" required />\n\n          <BR>\n\n          <span class="label-text"><B>Peso:</B></span>\n          <input type="text" [(ngModel)]="expediente.peso" class="form-control" required />\n\n          <span class="label-text"><B>Bultos:</B></span>\n          <input type="text" [(ngModel)]="expediente.bultos" class="form-control" required />\n\n          <span class="label-text"><B>¿La mercancía va etiquetada?:</B></span>\n          <select [(ngModel)]="expediente.mercanciaEtiq" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n          <BR>\n          <span class="label-text"><B>¿Impresión de etiquetas?:</B></span>\n          <select [(ngModel)]="expediente.impresionEtiq" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n          <span class="label-text"><B>¿Lleva EUR-1?:</B></span>\n          <select [(ngModel)]="expediente.llevaEur1" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n          <span class="label-text"><B>¿Necesita Paraduanero?:</B></span>\n          <select [(ngModel)]="expediente.paraduanero" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n          <span class="label-text"><B>¿SOIVRE?:</B></span>\n          <select [(ngModel)]="expediente.paraduanero" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n          <span class="label-text"><B>¿CITES?:</B></span>\n          <select [(ngModel)]="expediente.cites" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n          <span class="label-text"><B>¿FITO?:</B></span>\n          <select [(ngModel)]="expediente.cites" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n          <span class="label-text"><B>¿Sanidad?:</B></span>\n          <select [(ngModel)]="expediente.sanidad" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n\n          <BR>\n          <span class="label-text"><B>¿Sanidad Animal?:</B></span>\n          <select [(ngModel)]="expediente.sanidadAnimal" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n          <span class="label-text"><B>¿Farmacia?:</B></span>\n          <select [(ngModel)]="expediente.farmacia" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n          <span class="label-text"><B>¿DAE?:</B></span>\n          <select [(ngModel)]="expediente.dae" class="form-control">\n            <option>SI</option>\n            <option>NO</option>\n          </select>\n\n          <BR>\n            <span class="label-text"><B>Instrucciones:</B></span>\n            <input type="text" [(ngModel)]="expediente.instrucciones" class="form-control" required />\n            <BR>\n\n      </p>\n    </div>\n    <div id = "content_FichCli">\n      <p>\n        Fichero del Cliente\n      </p>\n    </div>\n    <div id = "content_FichAdmin">\n      <p>Ficheros Admin\n\n      </p>\n    </div>\n    <div id = "content_Indicaciones">\n      <p>Indicaciones\n      </p>\n    </div>\n    <div id = "content_Incidencias">\n        <p>Aqui van las incidencias\n        </p>\n    </div>\n    <div id = "content_VerValor">\n        <p>Verificacion Valor\n        </p>\n    </div>\n    <div id = "content_VerIVA">\n        <p>Verificacion IVA\n        </p>\n    </div>\n    <div id = "content_VerExp">\n        <p>Verificacion Exp\n        </p>\n    </div>\n    <div id = "content_Servicios">\n        <p>Servicios\n        </p>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/home/alex/projects/duaexpress/appduaexpress/src/pages/expedientes/aereo-despacho/aereo-despacho.html"*/,
+            selector: 'page-aereo-despacho',template:/*ion-inline-start:"/home/alex/projects/duaexpress/appduaexpress/src/pages/expedientes/aereo-despacho/aereo-despacho.html"*/'<page-home></page-home>\n<ion-content padding>\n  <div class = "tabinator">\n    <div class="module-title">\n          <h2>Despacho Aereo</h2>\n    </div>\n\n    <input type = "radio" id = "tabExpediente" name = "tabs" checked>\n    <label for = "tabExpediente">Expediente</label>\n    <input type = "radio" id = "tabFichCli" name = "tabs">\n    <label for = "tabFichCli">Ficheros Cliente</label>\n    <input type = "radio" id = "tabFichAdmin" name = "tabs">\n    <label for = "tabFichAdmin">Ficheros Admin</label>\n    <input type = "radio" id = "tabIndicaciones" name = "tabs">\n    <label for = "tabIndicaciones">Indicaciones</label>\n    <input type = "radio" id = "tabIncidencias" name = "tabs">\n    <label for = "tabIncidencias">Incidencias</label>\n    <input type = "radio" id = "tabVeriValor" name = "tabs">\n    <label for = "tabVeriValor">Verificaci&oacute;n Valor</label>\n    <input type = "radio" id = "tabVerIva" name = "tabs">\n    <label for = "tabVerIva">Verificaci&oacute;n IVA</label>\n    <input type = "radio" id = "tabVerExp" name = "tabs">\n    <label for = "tabVerExp">Verificaci&oacute;n Exp</label>\n    <input type = "radio" id = "tabServicios" name = "tabs">\n    <label for = "tabServicios">Servicios</label>\n\n    <div id = "content_Expediente">\n      <div class="row">\n        <span class="label-text"><B>Nº Expediente:</B></span>\n        <input type="text" [(ngModel)]="expediente.numExpediente" class="form-control" required />\n\n        <span class="label-text"><B>Nº Conocimiento:</B></span>\n        <input type="text" [(ngModel)]="expediente.numConocimiento" class="form-control" required />\n\n        <span class="label-text"><B>Referencia:</B></span>\n        <input type="text" [(ngModel)]="expediente.referencia" class="form-control" required />\n      </div>\n      <div class="row">\n        <span class="label-text"><B>Fecha de vuelo:</B></span>\n        <input type="text" placeholder="" [(ngModel)]="expediente.fechaVuelo" class="form-control"\n          bsDatepicker [bsConfig]="bsConfig" required />\n\n        <span class="label-text"><B>Partida:</B></span>\n        <input type="text" [(ngModel)]="expediente.partida" class="form-control" required />\n      </div>\n      <div class="row">\n        <span class="label-text"><B>Peso:</B></span>\n        <input type="text" [(ngModel)]="expediente.peso" class="form-control" required />\n\n        <span class="label-text"><B>Bultos:</B></span>\n        <input type="text" [(ngModel)]="expediente.bultos" class="form-control" required />\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿La mercancía va etiquetada?:</B></span>\n        <select [(ngModel)]="expediente.mercanciaEtiq" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿Impresión de etiquetas?:</B></span>\n        <select [(ngModel)]="expediente.impresionEtiq" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿Lleva EUR-1?:</B></span>\n        <select [(ngModel)]="expediente.llevaEur1" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿Necesita Paraduanero?:</B></span>\n        <select [(ngModel)]="expediente.paraduanero" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿SOIVRE?:</B></span>\n        <select [(ngModel)]="expediente.paraduanero" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿CITES?:</B></span>\n        <select [(ngModel)]="expediente.cites" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿FITO?:</B></span>\n        <select [(ngModel)]="expediente.cites" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿Sanidad?:</B></span>\n        <select [(ngModel)]="expediente.sanidad" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿Sanidad Animal?:</B></span>\n        <select [(ngModel)]="expediente.sanidadAnimal" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿Farmacia?:</B></span>\n        <select [(ngModel)]="expediente.farmacia" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>¿DAE?:</B></span>\n        <select [(ngModel)]="expediente.dae" class="form-control">\n          <option>SI</option>\n          <option>NO</option>\n        </select>\n      </div>\n      <div class="row">\n        <span class="label-text"><B>Instrucciones:</B></span>\n        <input type="text" [(ngModel)]="expediente.instrucciones" class="form-control" required />\n      </div>\n    </div>\n\n    <div id = "content_FichCli">\n      <p>\n        Fichero del Cliente\n      </p>\n    </div>\n    <div id = "content_FichAdmin">\n      <p>Ficheros Admin\n\n      </p>\n    </div>\n    <div id = "content_Indicaciones">\n      <p>Indicaciones\n      </p>\n    </div>\n    <div id = "content_Incidencias">\n        <p>Aqui van las incidencias\n        </p>\n    </div>\n    <div id = "content_VerValor">\n        <p>Verificacion Valor\n        </p>\n    </div>\n    <div id = "content_VerIVA">\n        <p>Verificacion IVA\n        </p>\n    </div>\n    <div id = "content_VerExp">\n        <p>Verificacion Exp\n        </p>\n    </div>\n    <div id = "content_Servicios">\n        <p>Servicios\n        </p>\n    </div>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/home/alex/projects/duaexpress/appduaexpress/src/pages/expedientes/aereo-despacho/aereo-despacho.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ngx_bootstrap_datepicker__["b" /* BsLocaleService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ngx_bootstrap_datepicker__["b" /* BsLocaleService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ngx_bootstrap_datepicker__["b" /* BsLocaleService */]) === "function" && _c || Object])
     ], AereoDespachoPage);
     return AereoDespachoPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=aereo-despacho.js.map
 
 /***/ }),
 
-/***/ 225:
+/***/ 259:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 259;
+
+/***/ }),
+
+/***/ 301:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"../pages/expediente-edit/expediente-edit.module": [
+		709,
+		9
+	],
+	"../pages/expedientes/aereo-despacho/aereo-despacho.module": [
+		710,
+		8
+	],
+	"../pages/expedientes/dae/dae.module": [
+		711,
+		7
+	],
+	"../pages/expedientes/entrega-documentacion/entrega-documentacion.module": [
+		712,
+		6
+	],
+	"../pages/expedientes/expedientes.module": [
+		713,
+		5
+	],
+	"../pages/expedientes/maritimo-despacho/maritimo-despacho.module": [
+		714,
+		4
+	],
+	"../pages/login/login.module": [
+		715,
+		3
+	],
+	"../pages/logout/logout.module": [
+		716,
+		2
+	],
+	"../pages/register/register.module": [
+		717,
+		1
+	],
+	"../pages/usuarios/usuarios.module": [
+		718,
+		0
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = 301;
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 304:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Expediente; });
+var Expediente = /** @class */ (function () {
+    function Expediente() {
+    }
+    return Expediente;
+}());
+
+//# sourceMappingURL=expediente.js.map
+
+/***/ }),
+
+/***/ 308:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
+var User = /** @class */ (function () {
+    function User() {
+    }
+    return User;
+}());
+
+//# sourceMappingURL=user.js.map
+
+/***/ }),
+
+/***/ 414:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -814,114 +922,6 @@ var DaePage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=dae.js.map
-
-/***/ }),
-
-/***/ 260:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 260;
-
-/***/ }),
-
-/***/ 302:
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"../pages/expediente-edit/expediente-edit.module": [
-		709,
-		9
-	],
-	"../pages/expedientes/aereo-despacho/aereo-despacho.module": [
-		710,
-		8
-	],
-	"../pages/expedientes/dae/dae.module": [
-		711,
-		7
-	],
-	"../pages/expedientes/entrega-documentacion/entrega-documentacion.module": [
-		712,
-		6
-	],
-	"../pages/expedientes/expedientes.module": [
-		714,
-		5
-	],
-	"../pages/expedientes/maritimo-despacho/maritimo-despacho.module": [
-		713,
-		4
-	],
-	"../pages/login/login.module": [
-		715,
-		3
-	],
-	"../pages/logout/logout.module": [
-		716,
-		2
-	],
-	"../pages/register/register.module": [
-		717,
-		1
-	],
-	"../pages/usuarios/usuarios.module": [
-		718,
-		0
-	]
-};
-function webpackAsyncContext(req) {
-	var ids = map[req];
-	if(!ids)
-		return Promise.reject(new Error("Cannot find module '" + req + "'."));
-	return __webpack_require__.e(ids[1]).then(function() {
-		return __webpack_require__(ids[0]);
-	});
-};
-webpackAsyncContext.keys = function webpackAsyncContextKeys() {
-	return Object.keys(map);
-};
-webpackAsyncContext.id = 302;
-module.exports = webpackAsyncContext;
-
-/***/ }),
-
-/***/ 305:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Expediente; });
-var Expediente = /** @class */ (function () {
-    function Expediente() {
-    }
-    return Expediente;
-}());
-
-//# sourceMappingURL=expediente.js.map
-
-/***/ }),
-
-/***/ 309:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
-var User = /** @class */ (function () {
-    function User() {
-    }
-    return User;
-}());
-
-//# sourceMappingURL=user.js.map
 
 /***/ }),
 
@@ -1045,16 +1045,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_usuarios_usuarios__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_expedientes_expedientes__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_expedientes_aereo_despacho_aereo_despacho__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_expedientes_dae_dae__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_expedientes_dae_dae__ = __webpack_require__(414);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_expedientes_maritimo_despacho_maritimo_despacho__ = __webpack_require__(416);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_expedientes_entrega_documentacion_entrega_documentacion__ = __webpack_require__(415);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_expediente_edit_expediente_edit__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_register_register__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_status_bar__ = __webpack_require__(349);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_splash_screen__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_status_bar__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_splash_screen__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angularfire2__ = __webpack_require__(609);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angularfire2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_angularfire2__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_angularfire2_auth__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_angularfire2_auth__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_angularfire2_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_angularfire2_auth__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_angularfire2_firestore__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_angularfire2_firestore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_angularfire2_firestore__);
@@ -1064,7 +1064,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ng2_smart_table__ = __webpack_require__(610);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__angular_router__ = __webpack_require__(662);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ng_bootstrap_ng_bootstrap__ = __webpack_require__(688);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_ngx_bootstrap__ = __webpack_require__(413);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_ngx_bootstrap__ = __webpack_require__(412);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pages_logout_logout__ = __webpack_require__(122);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1136,8 +1136,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/expedientes/aereo-despacho/aereo-despacho.module#AereoDespachoPageModule', name: 'AereoDespachoPage', segment: 'aereo-despacho', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/expedientes/dae/dae.module#DaePageModule', name: 'DaePage', segment: 'dae', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/expedientes/entrega-documentacion/entrega-documentacion.module#EntregaDocumentacionPageModule', name: 'EntregaDocumentacionPage', segment: 'entrega-documentacion', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/expedientes/maritimo-despacho/maritimo-despacho.module#MaritimoDespachoPageModule', name: 'MaritimoDespachoPage', segment: 'maritimo-despacho', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/expedientes/expedientes.module#ExpedientesPageModule', name: 'ExpedientesPage', segment: 'expedientes', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/expedientes/maritimo-despacho/maritimo-despacho.module#MaritimoDespachoPageModule', name: 'MaritimoDespachoPage', segment: 'maritimo-despacho', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/logout/logout.module#LogoutPageModule', name: 'LogoutPage', segment: 'logout', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
@@ -1192,8 +1192,8 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(349);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(352);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(351);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_expedientes_expedientes__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_usuarios_usuarios__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(110);
@@ -1281,7 +1281,7 @@ var MyApp = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2_auth___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angularfire2_auth__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1367,12 +1367,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ExpedientesPage = /** @class */ (function () {
-    function ExpedientesPage(navCtrl, navParams, database, expedienteService, actionSheetCtrl) {
+    function ExpedientesPage(navCtrl, navParams, database, expedienteService, actionSheetCtrl, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.database = database;
         this.expedienteService = expedienteService;
         this.actionSheetCtrl = actionSheetCtrl;
+        this.alertCtrl = alertCtrl;
         this.expTipoArray = [
             { id: __WEBPACK_IMPORTED_MODULE_5__models_global_enum__["a" /* ExpedienteSubTipo */].DespachoAereoExportacion, label: 'Despacho Aéreo Exportación' },
             { id: __WEBPACK_IMPORTED_MODULE_5__models_global_enum__["a" /* ExpedienteSubTipo */].DespachoAereoImportacion, label: 'Despacho Aéreo Importación' },
@@ -1426,7 +1427,6 @@ var ExpedientesPage = /** @class */ (function () {
             noDataMessage: '',
         };
         this.expedientes = expedienteService.getExpedientes().valueChanges();
-        this.showMessage = '';
     }
     ExpedientesPage.prototype.ionViewDidLoad = function () { };
     ExpedientesPage.prototype.newExpediente = function (event) {
@@ -1445,7 +1445,12 @@ var ExpedientesPage = /** @class */ (function () {
             }
         }
         else {
-            this.showMessage = 'Seleccione un tipo de expediente';
+            var alert = this.alertCtrl.create({
+                title: 'Notificación:',
+                subTitle: 'Seleccione un tipo de expediente',
+                buttons: ['Aceptar']
+            });
+            alert.present();
         }
     };
     ExpedientesPage.prototype.editExpediente = function (event) {
@@ -1475,12 +1480,12 @@ var ExpedientesPage = /** @class */ (function () {
     };
     ExpedientesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-expedientes',template:/*ion-inline-start:"/home/alex/projects/duaexpress/appduaexpress/src/pages/expedientes/expedientes.html"*/'\n<page-home></page-home>\n\n<ion-content class="top120" padding>\n  <div class="module-title">\n    <h2>Expedientes</h2>\n  </div>\n\n  <div>\n    <button class="form-control button-new" (click)="newExpediente($event)">Nuevo Expediente</button>\n    <select class="form-control" [(ngModel)]="nuevoExpediente">\n      <option *ngFor="let expTipo of expTipoArray" [ngValue]="expTipo.id">{{ expTipo.label }}</option>\n    </select>\n  </div>\n\n  <div *ngIf="!nuevoExpediente">\n    <span>{{ showMessage }}</span>\n  </div>\n\n  <div>\n    <ng2-smart-table class="form-control" (editConfirm)="updateExpediente($event)" (deleteConfirm)="deleteExpediente($event)"\n      (userRowSelect)="editExpediente($event)" [settings]="settings" [source]="expedientes | async">\n    </ng2-smart-table>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/alex/projects/duaexpress/appduaexpress/src/pages/expedientes/expedientes.html"*/,
+            selector: 'page-expedientes',template:/*ion-inline-start:"/home/alex/projects/duaexpress/appduaexpress/src/pages/expedientes/expedientes.html"*/'\n<page-home></page-home>\n\n<ion-content class="top120" padding>\n  <div class="module-title">\n    <h2>Expedientes</h2>\n  </div>\n\n  <div>\n    <button class="form-control button-new" (click)="newExpediente($event)">Nuevo Expediente</button>\n    <select class="form-control" [(ngModel)]="nuevoExpediente">\n      <option *ngFor="let expTipo of expTipoArray" [ngValue]="expTipo.id">{{ expTipo.label }}</option>\n    </select>\n  </div>\n\n  <div>\n    <ng2-smart-table class="form-control" (editConfirm)="updateExpediente($event)" (deleteConfirm)="deleteExpediente($event)"\n      (userRowSelect)="editExpediente($event)" [settings]="settings" [source]="expedientes | async">\n    </ng2-smart-table>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/alex/projects/duaexpress/appduaexpress/src/pages/expedientes/expedientes.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["AngularFirestore"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["AngularFirestore"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_expediente_services__["a" /* ExpedienteService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_expediente_services__["a" /* ExpedienteService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["AngularFirestore"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_firestore__["AngularFirestore"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_expediente_services__["a" /* ExpedienteService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_expediente_services__["a" /* ExpedienteService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _f || Object])
     ], ExpedientesPage);
     return ExpedientesPage;
-    var _a, _b, _c, _d, _e;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=expedientes.js.map
@@ -1495,7 +1500,7 @@ var ExpedientesPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_user__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_user__ = __webpack_require__(308);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__register_register__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(110);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1530,20 +1535,20 @@ var LoginPage = /** @class */ (function () {
             })
                 .catch(function (err) {
                 var alert = _this.alertCtrl.create({
-                    title: 'Error',
-                    subTitle: err.message,
+                    title: 'Notificación:',
+                    subTitle: 'Credenciales incorrectas/' + err.message,
                     buttons: ['Aceptar']
                 });
                 alert.present();
             });
         }
         else {
-            var alert_1 = this.alertCtrl.create({
-                title: 'Error',
+            var alert = this.alertCtrl.create({
+                title: 'Notificación:',
                 subTitle: "Complete Email y Password",
                 buttons: ['Aceptar']
             });
-            alert_1.present();
+            alert.present();
         }
     };
     LoginPage.prototype.signin = function () {
@@ -1557,12 +1562,10 @@ var LoginPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-login',template:/*ion-inline-start:"/home/alex/projects/duaexpress/appduaexpress/src/pages/login/login.html"*/'<ion-content class="form-content" padding>\n  <div class="wrapper">\n    <form class="form-signin">\n      <ion-row>\n        <ion-col>\n          <img class="logo" src="assets/imgs/logoL.jpg" />\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <ion-col>\n          <ion-list inset>\n            <ion-item>\n              <ion-input class="form-control" placeholder="Email" [(ngModel)]="user.email" name="email" type="text" autocapitalize="off" required></ion-input>\n            </ion-item>\n\n            <ion-item>\n              <ion-input class="form-control" type="password" placeholder="Password" name="password" [(ngModel)]="user.password" required></ion-input>\n            </ion-item>\n          </ion-list>\n        </ion-col>\n      </ion-row>\n\n      <ion-row>\n        <br/><br/>\n      </ion-row>\n\n      <ion-row>\n        <ion-col class="signup-col">\n          <button ion-button class="submit-btn" full type="submit" (click)="login()">Entrar</button>\n          <button ion-button class="register-btn" block clear  (click)="signin()">Registrarse</button>\n        </ion-col>\n      </ion-row>\n    </form>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/alex/projects/duaexpress/appduaexpress/src/pages/login/login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_auth__["a" /* AuthProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _d || Object])
     ], LoginPage);
     return LoginPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=login.js.map
