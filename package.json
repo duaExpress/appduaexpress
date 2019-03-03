@@ -31,6 +31,7 @@
     "firebase": "^5.5.7",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "moment": "^2.24.0",
     "ng2-completer": "^2.0.8",
     "ng2-smart-table": "^1.3.5",
     "ngx-bootstrap": "^3.1.2",
@@ -45,5 +46,8 @@
     "postcss": "6.0.14",
     "typescript": "~2.6.2"
   },
-  "description": "duaexpress project"
+  "description": "duaexpress project",
+  "cordova": {
+    "plugins": {}
+  }
 }

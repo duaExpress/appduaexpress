@@ -56,4 +56,13 @@ page-expedientes {
   ng2-smart-table-title > a {
     color: #FFFFFF !important;
   }
+
+  .form-control {
+    border: 0px !important;
+    padding-left: 15px;
+  }
+
+  .white-space {
+    width: 6px;
+  }
 }

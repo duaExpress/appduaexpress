@@ -1,5 +1,7 @@
 {
   "name": "appduaexpress",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

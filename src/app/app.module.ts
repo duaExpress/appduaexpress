@@ -29,10 +29,13 @@ import { ExpedienteService } from '../services/expediente.services';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BsDatepickerModule } from 'ngx-bootstrap';
 import { TabsModule } from 'ngx-bootstrap';
 
 import { LogoutPage } from '../pages/logout/logout';
+
+import { BsDatepickerModule } from 'ngx-bootstrap';
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { esLocale, enGbLocale } from 'ngx-bootstrap/locale';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCb7no2ZguQECh7appTgDkrLOrwcW5_9x4",
@@ -42,6 +45,9 @@ export const firebaseConfig = {
   storageBucket: "duaexpress-online.appspot.com",
   messagingSenderId: "1020292615326"
 };
+
+defineLocale('es', esLocale);
+defineLocale('en', enGbLocale);
 
 @NgModule({
   declarations: [
@@ -66,9 +72,9 @@ export const firebaseConfig = {
     Ng2SmartTableModule,
     NgbModule.forRoot(),
     TabsModule.forRoot(),
-    BsDatepickerModule.forRoot(),
     RouterModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    BsDatepickerModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -91,7 +97,7 @@ export const firebaseConfig = {
     UserService,
     ExpedienteService,
     DatePipe,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}

@@ -6,15 +6,16 @@
     <h2>Expedientes</h2>
   </div>
 
-  <div>
-    <button class="form-control button-new" (click)="newExpediente($event)">Nuevo Expediente</button>
-    <select class="form-control" [(ngModel)]="nuevoExpediente">
+  <div class="row form-control">
+    <button class="button-new" (click)="newExpediente($event)">Nuevo Expediente</button>
+    <div class="white-space"></div>
+    <select [(ngModel)]="nuevoExpediente">
       <option *ngFor="let expTipo of expTipoArray" [ngValue]="expTipo.id">{{ expTipo.label }}</option>
     </select>
   </div>
 
   <div>
-    <ng2-smart-table class="form-control" (editConfirm)="updateExpediente($event)" (deleteConfirm)="deleteExpediente($event)"
+    <ng2-smart-table (editConfirm)="updateExpediente($event)" (deleteConfirm)="deleteExpediente($event)"
       (userRowSelect)="editExpediente($event)" [settings]="settings" [source]="expedientes | async">
     </ng2-smart-table>
   </div>
