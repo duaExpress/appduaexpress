@@ -3,3 +3,5 @@ node_modules/
 plugins/
 www/
 .sourcemaps/
+
+package-lock.json
