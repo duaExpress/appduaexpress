@@ -1,7 +1,5 @@
+
 node_modules/
 plugins/
 www/
-www/build/
-www/lib/
-www/*
-
+.sourcemaps/
