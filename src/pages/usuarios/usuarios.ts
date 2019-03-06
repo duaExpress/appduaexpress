@@ -26,27 +26,33 @@ export class UsuariosPage {
       name: {
         title: 'Nombre',
         width: '15%',
+        class: 'align-center',
       },
       company: {
         title: 'Empresa',
         width: '15%',
+        class: 'align-center',
       },
       cif: {
         title: 'CIF',
         width: '8%',
+        class: 'align-center',
       },
       email: {
         title: 'Email',
         editable: false,
         width: '15%',
+        class: 'align-center',
       },
       emailNotif: {
         title: 'Email Notificaciones',
         width: '15%',
+        class: 'align-center',
       },
       tel: {
         title: 'Telefono',
         width: '10%',
+        class: 'align-center',
       },
       active: {
         title: 'Activo',
@@ -60,6 +66,7 @@ export class UsuariosPage {
           },
         },
         width: '5%',
+        class: 'align-center',
       },
       profile: {
         title: 'Perfil',
@@ -73,6 +80,7 @@ export class UsuariosPage {
           },
         },
         width: '8%',
+        class: 'align-center',
       }
     },
     edit:{

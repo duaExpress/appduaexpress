@@ -4,4 +4,4 @@ plugins/
 www/
 .sourcemaps/
 
-/package-lock.json
+package-lock.json

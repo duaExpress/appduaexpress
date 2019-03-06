@@ -35,28 +35,34 @@ export class ExpedientesPage {
     actions: {
       columnTitle: 'Acciones',
       position: 'right',
-      add: false
+      add: false,
+      class: 'align-center',
     },
     columns: {
       empresa: {
         title: 'Empresa',
         width: '18%',
+        class: 'align-center',
       },
       numExpediente: {
         title: 'Nº Expediente',
         width: '18%',
+        class: 'align-center',
       },
       numConocimiento: {
         title: 'Nº Conocimiento',
         width: '18%',
+        class: 'align-center',
       },
       referencia: {
         title: 'Referencia',
         width: '18%',
+        class: 'align-center',
       },
       fecha: {
         title: 'Fecha',
         width: '18%',
+        class: 'align-center',
       }
     },
     edit:{
