@@ -9,6 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { ExpedientesPage } from '../pages/expedientes/expedientes';
 import { AereoDespachoPage } from '../pages/expedientes/aereo-despacho/aereo-despacho';
+import { AereoImportPage } from '../pages/expedientes/aereo-import/aereo-import';
 import { DaePage } from '../pages/expedientes/dae/dae';
 import { MaritimoDespachoPage } from '../pages/expedientes/maritimo-despacho/maritimo-despacho';
 import { EntregaDocumentacionPage } from '../pages/expedientes/entrega-documentacion/entrega-documentacion';
@@ -56,6 +57,7 @@ defineLocale('en', enGbLocale);
     ExpedientesPage,
     ExpedienteEditPage,
     AereoDespachoPage,
+    AereoImportPage,
     DaePage,
     MaritimoDespachoPage,
     EntregaDocumentacionPage,
@@ -86,6 +88,7 @@ defineLocale('en', enGbLocale);
     UsuariosPage,
     RegisterPage,
     AereoDespachoPage,
+    AereoImportPage,
     DaePage,
     LogoutPage
   ],

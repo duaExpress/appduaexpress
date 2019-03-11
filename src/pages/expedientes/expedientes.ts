@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { ExpedienteEditPage } from '../expediente-edit/expediente-edit';
 import { ExpedienteSubTipo } from '../../models/global.enum';
 import { AereoDespachoPage } from '../expedientes/aereo-despacho/aereo-despacho';
+import { AereoImportPage } from '../expedientes/aereo-import/aereo-import';
 import { DaePage }  from '../expedientes/dae/dae';
 
 interface ExpTipo {
@@ -106,6 +107,7 @@ export class ExpedientesPage {
           break;
         }
         case ExpedienteSubTipo.DespachoAereoImportacion: {
+          this.navCtrl.setRoot(AereoImportPage);
           break;
         }
         default: {
