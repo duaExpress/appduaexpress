@@ -110,6 +110,10 @@ export class ExpedientesPage {
           this.navCtrl.setRoot(AereoImportPage);
           break;
         }
+        case ExpedienteSubTipo.DAE: {
+          this.navCtrl.setRoot(DaePage);
+          break;
+        }
         default: {
           break;
         }

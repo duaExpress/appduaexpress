@@ -1,21 +1,99 @@
-
 <page-home></page-home>
-
 <ion-content padding>
+  <div class = "tabinator">
+    <div class="module-title">
+          <h2>DAE</h2>
+    </div>
 
-    <tabset>
-        <tab heading="Tab1" customClass="tab-style">
-            <div class="tab-page-content">
-                <!-- content-->
-                ddmdmdd
+    <input type = "radio" id = "tabExpediente" name = "tabs" checked>
+    <label for = "tabExpediente">Expediente</label>
+    <input type = "radio" id = "tabFichCli" name = "tabs">
+    <label for = "tabFichCli">Ficheros Cliente</label>
+    <input type = "radio" id = "tabFichAdmin" name = "tabs">
+    <label for = "tabFichAdmin">Ficheros Admin</label>
+    <input type = "radio" id = "tabIndicaciones" name = "tabs">
+    <label for = "tabIndicaciones">Indicaciones</label>
+    <input type = "radio" id = "tabIncidencias" name = "tabs">
+    <label for = "tabIncidencias">Incidencias</label>
+    <input type = "radio" id = "tabVeriValor" name = "tabs">
+    <label for = "tabVeriValor">Verificaci&oacute;n Valor</label>
+    <input type = "radio" id = "tabVerIva" name = "tabs">
+    <label for = "tabVerIva">Verificaci&oacute;n IVA</label>
+    <input type = "radio" id = "tabVerExp" name = "tabs">
+    <label for = "tabVerExp">Verificaci&oacute;n Exp</label>
+    <input type = "radio" id = "tabServicios" name = "tabs">
+    <label for = "tabServicios">Servicios</label>
+
+    <div id = "content_Expediente">
+      <div class="row">
+        <div class="col-2 form-group">
+          <span class="label-text"><B>Nº Expediente:</B></span>
+          <input type="text" [(ngModel)]="expediente.numExpediente" class="form-control" required />
+        </div>
+        <div class="col-2 form-group">
+          <span class="label-text"><B>Nº DAE:</B></span>
+          <input type="text" [(ngModel)]="expediente.numDAE" class="form-control" required />
+        </div>
+        <div class="col-2 form-group">
+          <span class="label-text"><B>Referencia:</B></span>
+          <input type="text" [(ngModel)]="expediente.referencia" class="form-control" required />
+        </div>
+      </div>
+
+
+
+      <div class="row">
+          <div class="col-2 form-group">
+              <span class="label-text"><B>Nº Conocimiento:</B></span>
+              <input type="text" [(ngModel)]="expediente.numConocimiento" class="form-control" required />
             </div>
-        </tab>
-        <tab heading="Tab2" customClass="tab-style">
-            <div class="tab-page-content">
-                <!-- content-->
-                fffff
-            </div>
-        </tab>
-      </tabset>
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-2 form-group">
+          <span class="label-text"><B>Instrucciones:</B></span>
+          <input type="text" [(ngModel)]="expediente.instrucciones" class="form-control" required />
+        </div>
+      </div>
+    </div>
+
+    <div id = "content_FichCli">
+      <p>
+        Fichero del Cliente
+      </p>
+    </div>
+
+    <div id = "content_FichAdmin">
+      <p>Ficheros Admin
+
+      </p>
+    </div>
+    <div id = "content_Indicaciones">
+      <p>Indicaciones
+      </p>
+    </div>
+    <div id = "content_Incidencias">
+        <p>Aqui van las incidencias
+        </p>
+    </div>
+    <div id = "content_VerValor">
+        <p>Verificacion Valor
+        </p>
+    </div>
+    <div id = "content_VerIVA">
+        <p>Verificacion IVA
+        </p>
+    </div>
+    <div id = "content_VerExp">
+        <p>Verificacion Exp
+        </p>
+    </div>
+    <div id = "content_Servicios">
+        <p>Servicios
+        </p>
+    </div>
+  </div>
 
 </ion-content>
