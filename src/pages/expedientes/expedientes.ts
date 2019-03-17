@@ -129,7 +129,8 @@ export class ExpedientesPage {
   }
 
   public editExpediente(event) {
-    this.navCtrl.push(ExpedienteEditPage,{idExpediente: event.data.uid});
+    console.log(event.data);
+    this.navCtrl.push(ExpedienteEditPage,{idExpediente: event.data.id});
   }
 
   public updateExpediente(event) {

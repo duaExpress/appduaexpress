@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Expediente } from '../models/expediente';
 import { DatePipe } from '@angular/common';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ExpedienteService{
@@ -46,6 +47,18 @@ export class ExpedienteService{
 
     public deleteExpediente(id){
       this.expedientes.doc(id).delete();
+    }
+
+    public getExpediente(documentId: string): AngularFirestoreDocument<Expediente>{
+
+      /*filterBy(categoriaToFilter: string) {s
+        this.avisos = this.afs.collection('avisos', ref => ref.where('categoria','==', categoriaToFilter )).valueChanges()
+
+        return this.avisos;
+      };*/
+
+      console.log('buscando: ' + documentId);
+      return this.database.collection('expedientes').doc(documentId);
     }
 
     public getExpedientes():AngularFirestoreCollection<Expediente>{
