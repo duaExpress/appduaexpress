@@ -41,13 +41,16 @@ export class ExpedienteEditPage {
   ) {
       this.idExpediente = this.navParams.get("idExpediente");
       console.log('Id:' + this.idExpediente);
-      //console.log('Exp: ' + expedienteEnc.numConocimiento);
       this.expediente = new Expediente();
-      this.expedienteDocument = this.expedienteService.getExpediente(this.idExpediente);
-      this.expedienteDocument.valueChanges().subscribe(exp => {
-          this.expediente.numExpediente = exp.numExpediente;
-          this.expediente.numConocimiento=exp.numConocimiento;
-      })
+
+      if(this.idExpediente != '0' ){
+        this.expedienteDocument = this.expedienteService.getExpediente(this.idExpediente);
+        this.expedienteDocument.valueChanges().subscribe(exp => {
+            this.expediente= exp;
+        })
+      }
+
+
     }
 
     ionViewDidLoad() {}

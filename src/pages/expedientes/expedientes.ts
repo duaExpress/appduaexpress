@@ -100,24 +100,9 @@ export class ExpedientesPage {
   ionViewDidLoad() {}
 
   public newExpediente(event) {
+
     if (this.nuevoExpediente) {
-      switch(this.nuevoExpediente) {
-        case ExpedienteSubTipo.DespachoAereoExportacion: {
-          this.navCtrl.setRoot(AereoDespachoPage);
-          break;
-        }
-        case ExpedienteSubTipo.DespachoAereoImportacion: {
-          this.navCtrl.setRoot(AereoImportPage);
-          break;
-        }
-        case ExpedienteSubTipo.DAE: {
-          this.navCtrl.setRoot(DaePage);
-          break;
-        }
-        default: {
-          break;
-        }
-     }
+      this.navCtrl.push(ExpedienteEditPage,{idExpediente: '0', tipo: this.nuevoExpediente});
     } else {
       let alert = this.alertCtrl.create({
         title: 'Notificación:',
