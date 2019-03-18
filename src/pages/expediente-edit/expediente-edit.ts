@@ -55,12 +55,6 @@ export class ExpedienteEditPage {
 
     ionViewDidLoad() {}
 
-    public saveExpediente(event) {
-
-      //this.expedienteService.saveExpediente(this.expediente);
-
-    }
-
     public editExpediente() {
 
       if(this.idExpediente == '0'){
