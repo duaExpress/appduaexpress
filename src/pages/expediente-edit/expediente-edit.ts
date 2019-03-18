@@ -61,6 +61,16 @@ export class ExpedienteEditPage {
 
     }
 
+    public editExpediente() {
+
+      if(this.idExpediente == '0'){
+        this.expedienteService.saveExpediente(this.expediente);
+      }else{
+        this.expedienteService.updateExpediente(this.expediente);
+      }
+      this.navCtrl.pop();
+    }
+
     public close() {
       this.navCtrl.setRoot(ExpedientesPage);
     }
