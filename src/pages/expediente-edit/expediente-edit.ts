@@ -49,8 +49,6 @@ export class ExpedienteEditPage {
             this.expediente= exp;
         })
       }
-
-
     }
 
     ionViewDidLoad() {}

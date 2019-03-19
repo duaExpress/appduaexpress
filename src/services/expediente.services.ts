@@ -11,12 +11,14 @@ export class ExpedienteService{
   expedientes: AngularFirestoreCollection<any>;
 
   constructor(
+
     public database: AngularFirestore,
     public datepipe: DatePipe) {
       this.expedientes = this.getExpedientes();
     }
 
     public saveExpediente(expediente: Expediente){
+
       const id = this.database.createId();
 
       this.database.doc(`expedientes/${id}`).set({
@@ -27,7 +29,7 @@ export class ExpedienteService{
         empresa: this.getValueFromString(expediente.empresa),
         partida: this.getValueFromString(expediente.partida),
         fechaVuelo: this.getValueFromString(expediente.fechaVuelo),
-        //peso: this.getValueFromNumber(expediente.peso),
+        peso: this.getValueFromNumber(expediente.peso),
         fecha:this.getDateNow()
       });
     }
@@ -41,7 +43,7 @@ export class ExpedienteService{
         empresa: this.getValueFromString(expediente.empresa),
         partida: this.getValueFromString(expediente.partida),
         fechaVuelo:this.getValueFromString(expediente.fechaVuelo),
-        //peso: this.getValueFromNumber(expediente.peso)
+        peso: this.getValueFromNumber(expediente.peso)
       });
     }
 
@@ -70,6 +72,14 @@ export class ExpedienteService{
     }
 
     private getValueFromString(value:string){
+      if (value === undefined || value == null){
+        return '';
+      } else {
+        return value;
+      }
+    }
+
+    private getValueFromNumber(value:number){
       if (value === undefined || value == null){
         return '';
       } else {
