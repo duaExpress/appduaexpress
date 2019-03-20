@@ -8,7 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { ExpedientesPage } from '../pages/expedientes/expedientes';
-import { AereoDespachoPage } from '../pages/expedientes/aereo-despacho/aereo-despacho';
+
 import { AereoImportPage } from '../pages/expedientes/aereo-import/aereo-import';
 import { DaePage } from '../pages/expedientes/dae/dae';
 import { MaritimoDespachoPage } from '../pages/expedientes/maritimo-despacho/maritimo-despacho';
@@ -38,6 +38,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { esLocale, enGbLocale } from 'ngx-bootstrap/locale';
 
+import { AereoDespachoComponent } from '../components/aereo-despacho/aereo-despacho';
+
+
 export const firebaseConfig = {
   apiKey: "AIzaSyCb7no2ZguQECh7appTgDkrLOrwcW5_9x4",
   authDomain: "duaexpress-online.firebaseapp.com",
@@ -56,7 +59,6 @@ defineLocale('en', enGbLocale);
     HomePage,
     ExpedientesPage,
     ExpedienteEditPage,
-    AereoDespachoPage,
     AereoImportPage,
     DaePage,
     MaritimoDespachoPage,
@@ -64,7 +66,8 @@ defineLocale('en', enGbLocale);
     LoginPage,
     UsuariosPage,
     RegisterPage,
-    LogoutPage
+    LogoutPage,
+    AereoDespachoComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +90,6 @@ defineLocale('en', enGbLocale);
     LoginPage,
     UsuariosPage,
     RegisterPage,
-    AereoDespachoPage,
     AereoImportPage,
     DaePage,
     LogoutPage

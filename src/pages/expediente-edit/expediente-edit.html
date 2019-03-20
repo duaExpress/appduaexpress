@@ -25,56 +25,7 @@
     <label for = "tabServicios">Servicios</label>
 
     <div id = "content_Expediente">
-      <div class="row">
-        <div class="col-2 form-group">
-          <span class="label-text"><B>Nº Expediente:</B></span>
-          <input type="text" [(ngModel)]="expediente.numExpediente" class="form-control" required />
-        </div>
-        <div class="col-2 form-group">
-          <span class="label-text"><B>Nº Conocimiento:</B></span>
-          <input type="text" [(ngModel)]="expediente.numConocimiento" class="form-control" required />
-        </div>
-        <div class="col-2 form-group">
-          <span class="label-text"><B>Referencia:</B></span>
-          <input type="text" [(ngModel)]="expediente.referencia" class="form-control" required />
-        </div>
-      </div>
-
-
-
-      <div class="row">
-          <div class="col-2 form-group">
-              <span class="label-text"><B>Nº Precinto:</B></span>
-              <input type="text" [(ngModel)]="expediente.numPrecinto" class="form-control" required />
-            </div>
-        <div class="col-2 form-group">
-          <span class="label-text"><B>Peso:</B></span>
-          <input type="text" [(ngModel)]="expediente.peso" class="form-control" required />
-        </div>
-        <div class="col-2 form-group">
-          <span class="label-text"><B>Bultos:</B></span>
-          <input type="text" [(ngModel)]="expediente.bultos" class="form-control" required />
-        </div>
-      </div>
-
-      <div class="row">
-          <div class="col-2 form-group">
-              <span class="label-text"><B>Destino de la mercanc&iacute;a:</B></span>
-              <input type="text" [(ngModel)]="expediente.destinoMercancia" class="form-control" required />
-            </div>
-        <div class="col-2 form-group">
-          <span class="label-text"><B>CP Destino:</B></span>
-          <input type="text" [(ngModel)]="expediente.cpDestino" class="form-control" required />
-        </div>
-
-      </div>
-
-      <div class="row">
-        <div class="col-2 form-group">
-          <span class="label-text"><B>Instrucciones:</B></span>
-          <input type="text" [(ngModel)]="expediente.instrucciones" class="form-control" required />
-        </div>
-      </div>
+      <aereo-despacho></aereo-despacho>
     </div>
 
     <div id = "content_FichCli">
@@ -114,8 +65,5 @@
     </div>
   </div>
 
-  <div class="row form-control">
-    <button class="button-new" (click)="editExpediente()">Guardar</button>
-    <div class="white-space"></div>
-  </div>
+
 </ion-content>
