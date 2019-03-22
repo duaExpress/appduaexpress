@@ -9,8 +9,6 @@ import { LoginPage } from '../pages/login/login';
 import { UsuariosPage } from '../pages/usuarios/usuarios';
 import { ExpedientesPage } from '../pages/expedientes/expedientes';
 
-import { AereoImportPage } from '../pages/expedientes/aereo-import/aereo-import';
-import { DaePage } from '../pages/expedientes/dae/dae';
 import { MaritimoDespachoPage } from '../pages/expedientes/maritimo-despacho/maritimo-despacho';
 import { EntregaDocumentacionPage } from '../pages/expedientes/entrega-documentacion/entrega-documentacion';
 
@@ -39,6 +37,8 @@ import { defineLocale } from 'ngx-bootstrap/chronos';
 import { esLocale, enGbLocale } from 'ngx-bootstrap/locale';
 
 import { AereoDespachoComponent } from '../components/aereo-despacho/aereo-despacho';
+import { AereoImportComponent} from '../components/aereo-import/aereo-import';
+import { DaeComponent } from '../components/dae/dae';
 
 
 export const firebaseConfig = {
@@ -59,15 +59,15 @@ defineLocale('en', enGbLocale);
     HomePage,
     ExpedientesPage,
     ExpedienteEditPage,
-    AereoImportPage,
-    DaePage,
     MaritimoDespachoPage,
     EntregaDocumentacionPage,
     LoginPage,
     UsuariosPage,
     RegisterPage,
     LogoutPage,
-    AereoDespachoComponent
+    AereoDespachoComponent,
+    AereoImportComponent,
+    DaeComponent
   ],
   imports: [
     BrowserModule,
@@ -90,8 +90,6 @@ defineLocale('en', enGbLocale);
     LoginPage,
     UsuariosPage,
     RegisterPage,
-    AereoImportPage,
-    DaePage,
     LogoutPage
   ],
   providers: [
