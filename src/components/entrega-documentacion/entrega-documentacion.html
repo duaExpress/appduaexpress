@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-2 form-group">
+    <span class="label-text"><B>Nº Expediente:</B></span>
+    <input type="text" [(ngModel)]="expediente.numExpediente" class="form-control" required />
+  </div>
+
+  <div class="col-2 form-group">
+    <span class="label-text"><B>Referencia:</B></span>
+    <input type="text" [(ngModel)]="expediente.referencia" class="form-control" required />
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-2 form-group">
+        <span class="label-text"><B>Nº Conocimiento:</B></span>
+        <input type="text" [(ngModel)]="expediente.numConocimiento" class="form-control" required />
+      </div>
+</div>
+
+<div class="col-2 form-group">
+  <span class="label-text"><B>¿Impresión de etiquetas?:</B></span>
+  <select class="control-select" [(ngModel)]="expediente.impresionEtiq">
+    <option>SI</option>
+    <option>NO</option>
+  </select>
+</div>
+
+<div class="row">
+  <div class="col-2 form-group">
+    <span class="label-text"><B>Instrucciones:</B></span>
+    <input type="text" [(ngModel)]="expediente.instrucciones" class="form-control" required />
+  </div>
+</div>

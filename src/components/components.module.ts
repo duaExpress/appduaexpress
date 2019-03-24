@@ -3,15 +3,18 @@ import { IonicModule } from 'ionic-angular';
 import { AereoDespachoComponent } from './aereo-despacho/aereo-despacho';
 import { AereoImportComponent } from './aereo-import/aereo-import';
 import { DaeComponent } from './dae/dae';
+import { EntregaDocumentacionComponent } from './entrega-documentacion/entrega-documentacion';
 @NgModule({
 	declarations: [AereoDespachoComponent,
     AereoImportComponent,
     DaeComponent,
-    DaeComponent],
+    DaeComponent,
+    EntregaDocumentacionComponent],
 	imports: [IonicModule],
 	exports: [AereoDespachoComponent,
     AereoImportComponent,
     DaeComponent,
-    DaeComponent]
+    DaeComponent,
+    EntregaDocumentacionComponent]
 })
 export class ComponentsModule {}

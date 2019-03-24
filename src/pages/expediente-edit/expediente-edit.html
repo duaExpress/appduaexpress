@@ -25,7 +25,16 @@
     <label for = "tabServicios">Servicios</label>
 
     <div id = "content_Expediente">
-      <dae></dae>
+
+        <div *ngIf="isDae()">
+            <dae></dae>
+        </div>
+        <div *ngIf="isDespachoAereo()">
+            <aereo-despacho></aereo-despacho>
+        </div>
+        <div *ngIf="isAereoImport()">
+            <aereo-import></aereo-import>
+        </div>
     </div>
 
     <div id = "content_FichCli">
