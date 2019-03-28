@@ -17,6 +17,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 import { AuthProvider } from '../providers/auth/auth';
 import { UserService } from '../services/user.services';
@@ -37,6 +38,7 @@ import { AereoDespachoComponent } from '../components/aereo-despacho/aereo-despa
 import { AereoImportComponent} from '../components/aereo-import/aereo-import';
 import { DaeComponent } from '../components/dae/dae';
 import { EntregaDocumentacionComponent } from '../components/entrega-documentacion/entrega-documentacion';
+import { FicherosClienteComponent } from '../components/ficheros-cliente/ficheros-cliente';
 
 
 export const firebaseConfig = {
@@ -64,12 +66,14 @@ defineLocale('en', enGbLocale);
     AereoDespachoComponent,
     AereoImportComponent,
     DaeComponent,
-    EntregaDocumentacionComponent
+    EntregaDocumentacionComponent,
+    FicherosClienteComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireStorageModule,
     AngularFireAuthModule,
     Ng2SmartTableModule,
     NgbModule.forRoot(),
