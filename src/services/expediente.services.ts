@@ -9,11 +9,10 @@ export class ExpedienteService{
 
   expediente: AngularFirestoreDocument<any>;
   expedientes: AngularFirestoreCollection<any>;
+  authUser: any;
 
-  constructor(
-
-    public database: AngularFirestore,
-    public datepipe: DatePipe) {
+  constructor(public database: AngularFirestore,  public datepipe: DatePipe) {
+      this.authUser = JSON.parse(window.localStorage.getItem('user'));
       this.expedientes = this.getExpedientes();
     }
 

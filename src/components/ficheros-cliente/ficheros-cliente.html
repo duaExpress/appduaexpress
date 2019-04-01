@@ -1,5 +1,6 @@
 <!-- Generated template for the FicherosClienteComponent component -->
 <div>
-  <label for="file">File:</label>
-<input type="file" (change)="upload($event)"  />
+  <input type="file" (change)="upload($event)" />
+  <div>{{ uploadPercent | async }}</div>
+  <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
 </div>

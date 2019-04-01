@@ -10,6 +10,8 @@ import * as moment from 'moment';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { ExpedienteSubTipo } from '../../models/global.enum';
+import { UserService } from '../../services/user.services';
+import { User } from '../../models/user';
 
 
 @IonicPage()
@@ -26,6 +28,7 @@ export class ExpedienteEditPage {
   bsConfig: Partial<BsDatepickerConfig>;
   idExpediente : any;
   tipo: any;
+  authUser: any;
 
   constructor(
     public navCtrl: NavController,
@@ -33,8 +36,15 @@ export class ExpedienteEditPage {
     public alertCtrl : AlertController,
     public formBuilder: FormBuilder,
     public database: AngularFirestore,
+    public userService: UserService,
     public expedienteService: ExpedienteService
   ) {
+
+
+      this.userService.getUser().snapshotChanges().subscribe(usuario => {
+        //console.log('user: ' + );
+      })
+
       this.idExpediente = this.navParams.get("idExpediente");
       this.tipo = this.navParams.get("tipo");
       this.expediente = new Expediente();

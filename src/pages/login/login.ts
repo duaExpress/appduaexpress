@@ -28,6 +28,7 @@ export class LoginPage {
   login() {
     if (this.user.email && this.user.password) {
       this.auth.loginUser(this.user.email, this.user.password ).then((user) => {
+        localStorage.setItem('user', JSON.stringify(user));
         this.navCtrl.setRoot(HomePage);
       })
        .catch(err => {
