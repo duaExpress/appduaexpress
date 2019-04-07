@@ -12,7 +12,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { ExpedienteSubTipo } from '../../models/global.enum';
 import { UserService } from '../../services/user.services';
 import { User } from '../../models/user';
-
+import { map } from 'rxjs/operators';
 
 @IonicPage()
 @Component({
@@ -29,6 +29,7 @@ export class ExpedienteEditPage {
   idExpediente : any;
   tipo: any;
   authUser: any;
+  user: Observable<User>;
 
   constructor(
     public navCtrl: NavController,
@@ -40,10 +41,19 @@ export class ExpedienteEditPage {
     public expedienteService: ExpedienteService
   ) {
 
+    this.authUser = JSON.parse(window.localStorage.getItem('user'));
 
-      this.userService.getUser().snapshotChanges().subscribe(usuario => {
-        //console.log('user: ' + );
-      })
+    console.log(' * User : ' + this.authUser.user.uid);
+    //this.user = this.userService.getUserById(this.authUser.user.uid);
+
+    this.user= this.userService.getUserObsById(this.authUser.user.uid);
+    console.log(this.user);
+    this.user.subscribe(usuario => {
+      console.log(usuario);
+    })
+
+
+
 
       this.idExpediente = this.navParams.get("idExpediente");
       this.tipo = this.navParams.get("tipo");

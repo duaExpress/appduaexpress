@@ -1,5 +1,4 @@
 import { ExpedienteVerificacion } from './expedienteVerificacion';
-
 import { ExpedienteTipo } from './global.enum';
 import { ExpedienteSubTipo } from './global.enum';
 
