@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { Expediente } from '../models/expediente';
+import { FicheroCliente } from '../models/ficheroCliente';
 import { DatePipe } from '@angular/common';
-import { Observable } from 'rxjs/Observable';
+
 
 @Injectable()
 export class FicherosClienteService{
@@ -16,33 +16,15 @@ export class FicherosClienteService{
       this.authUser = JSON.parse(window.localStorage.getItem('user'));
     }
 
-  /*  public saveExpediente(expediente: Expediente){
+   public saveFichero(ficheroCliente: FicheroCliente){
 
       const id = this.database.createId();
 
       this.database.doc(`ficherosCliente/${id}`).set({
         id,
-        numExpediente:this.getValueFromString(expediente.numExpediente),
-        referencia: this.getValueFromString(expediente.referencia),
-        numConocimiento: this.getValueFromString(expediente.numConocimiento),
-        empresa: this.getValueFromString(expediente.empresa),
-        partida: this.getValueFromString(expediente.partida),
-        fechaVuelo: this.getValueFromString(expediente.fechaVuelo),
-        peso: this.getValueFromNumber(expediente.peso),
-        fecha:this.getDateNow()
-      });
-    }
-
-    public updateExpediente(expediente: Expediente){
-
-      this.expedientes.doc(expediente.id).update({
-        numExpediente:this.getValueFromString(expediente.numExpediente),
-        referencia: this.getValueFromString(expediente.referencia),
-        numConocimiento: this.getValueFromString(expediente.numConocimiento),
-        empresa: this.getValueFromString(expediente.empresa),
-        partida: this.getValueFromString(expediente.partida),
-        fechaVuelo:this.getValueFromString(expediente.fechaVuelo),
-        peso: this.getValueFromNumber(expediente.peso)
+        idExpediente:this.getValueFromString(ficheroCliente.idExpediente),
+        uidCliente: this.getValueFromString(ficheroCliente.uidCliente),
+        urlDownload: this.getValueFromString(ficheroCliente.urlDownload)
       });
     }
 
@@ -50,15 +32,15 @@ export class FicherosClienteService{
       this.ficherosCliente.doc(id).delete();
     }
 
-
-
-    public getExpedientes():AngularFirestoreCollection<Expediente>{
-      return this.database.collection(`expedientes`);
-    }
-
     private getDateNow(){
       return this.datepipe.transform(new Date(), 'dd-MM-yyyy HH:mm:ss');
     }
+
+
+   public getFicheros():AngularFirestoreCollection<FicheroCliente>{
+    return this.database.collection('ficherosCliente');
+  }
+
 
     private getValueFromString(value:string){
       if (value === undefined || value == null){
@@ -76,5 +58,5 @@ export class FicherosClienteService{
       }
     }
 
-    */
+
 }
