@@ -1,6 +1,7 @@
 <!-- Generated template for the FicherosClienteComponent component -->
 <div>
-  <input type="file" (change)="upload($event)" />
+  <BR><b>Conocimiento aéreo</b> <input type="file" (change)="upload($event, 'conocimiento_aereo')" />
+  <BR><b>Factura Comercial </b> <input type="file" (change)="upload($event, 'factura_comercial')" />
   <div>{{ uploadPercent | async }}</div>
   <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
 </div>

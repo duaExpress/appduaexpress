@@ -39,7 +39,7 @@ import { AereoImportComponent} from '../components/aereo-import/aereo-import';
 import { DaeComponent } from '../components/dae/dae';
 import { EntregaDocumentacionComponent } from '../components/entrega-documentacion/entrega-documentacion';
 import { FicherosClienteComponent } from '../components/ficheros-cliente/ficheros-cliente';
-
+import { FicherosClienteService } from '../services/ficherosCliente.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCb7no2ZguQECh7appTgDkrLOrwcW5_9x4",
@@ -100,6 +100,7 @@ defineLocale('en', enGbLocale);
     AngularFirestoreModule,
     UserService,
     ExpedienteService,
+    FicherosClienteService,
     DatePipe,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]

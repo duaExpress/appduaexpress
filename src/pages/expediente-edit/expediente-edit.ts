@@ -41,19 +41,10 @@ export class ExpedienteEditPage {
     public expedienteService: ExpedienteService
   ) {
 
-    this.authUser = JSON.parse(window.localStorage.getItem('user'));
-
-    console.log(' * User : ' + this.authUser.user.uid);
-    //this.user = this.userService.getUserById(this.authUser.user.uid);
-
-    this.user= this.userService.getUserObsById(this.authUser.user.uid);
-    console.log(this.user);
-    this.user.subscribe(usuario => {
+    this.user = this.userService.getUser();
+  /*  this.user.subscribe(usuario => {
       console.log(usuario);
-    })
-
-
-
+    }) */
 
       this.idExpediente = this.navParams.get("idExpediente");
       this.tipo = this.navParams.get("tipo");
@@ -88,7 +79,7 @@ export class ExpedienteEditPage {
       return false;
     }
 
-    ionViewDidLoad() {}
+    ionViewDidLoad() { }
 
     public close() {
       this.navCtrl.setRoot(ExpedientesPage);

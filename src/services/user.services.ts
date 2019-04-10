@@ -11,6 +11,7 @@ export class UserService{
   users: AngularFirestoreCollection<any>;
   authUser:any;
 
+
   constructor(public database: AngularFirestore) {
     //Auth user
     this.authUser = JSON.parse(window.localStorage.getItem('user'));
@@ -33,9 +34,11 @@ export class UserService{
     return this.authUser;
   }
 
-  public getUser(){
-    return this.user;
+  public getUser() : Observable<User>{
+   return this.getUserObsById(this.authUser.user.uid);
   }
+
+
 
   public getUsers(){
     return this.database.collection('/users');
