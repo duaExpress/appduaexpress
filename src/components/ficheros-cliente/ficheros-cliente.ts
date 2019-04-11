@@ -24,7 +24,7 @@ import { FicheroCliente } from '../../models/ficheroCliente';
 export class FicherosClienteComponent {
 
   uploadPercent: Observable<number>;
-  downloadURL: Observable<string>;
+  downloadURL= new Observable<string>();
   idExpediente : any;
   localUser : any;
   ficheroCliente : FicheroCliente;
@@ -59,14 +59,15 @@ export class FicherosClienteComponent {
     this.uploadPercent = task.percentageChanges();
     // get notified when the download URL is available
     task.snapshotChanges().pipe(
-        finalize(() => this.downloadURL = fileRef.getDownloadURL() )
+        finalize(() => (this.downloadURL = fileRef.getDownloadURL()).subscribe((urlObs) => {
+          if(this.ficheroCliente.urlDownload == undefined || this.ficheroCliente.urlDownload==''){
+              this.ficheroCliente.urlDownload = filePath;
+              this.ficherosService.saveFichero(this.ficheroCliente);
+              console.log('guardado');
+            }
+        })
+        )
      ).subscribe()
-
-      this.downloadURL.subscribe(url => {
-        this.ficheroCliente.urlDownload =url;
-      });
-
-
   }
 
 }
