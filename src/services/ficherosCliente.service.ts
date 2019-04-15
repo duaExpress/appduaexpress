@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { FicheroCliente } from '../models/ficheroCliente';
 import { DatePipe } from '@angular/common';
+import { ExpedienteSubTipo } from '../models/global.enum';
 
 
 @Injectable()
@@ -26,6 +27,34 @@ export class FicherosClienteService{
         uidCliente: this.getValueFromString(ficheroCliente.uidCliente),
         urlDownload: this.getValueFromString(ficheroCliente.urlDownload)
       });
+    }
+
+
+    public getTiposFicheros(tipoExpediente){
+
+      let list : any;
+
+      switch (tipoExpediente) {
+
+        case ExpedienteSubTipo.DespachoAereoImportacion:
+            list = ['Factura Comercial', 'Packing List', 'Otros Documentos'];
+            break;
+        case ExpedienteSubTipo.DespachoAereoExportacion:
+           list = ['Conocimiento aéreo', 'Factura Comercial', 'Packing List', 'Autorización de Despacho', 'Etiquetas',
+            'Documento CITES', 'Certificado de Sanidad', 'Certificado de Sanidad Animal', 'Certificado de Farmacia',
+            'Documento DAE', 'Otros Documentos'];
+           break;
+        case ExpedienteSubTipo.DocEntega:
+            list = ['Conocimiento aéreo ', 'Etiquetas', 'Otros Documentos'];
+            break;
+        case ExpedienteSubTipo.DAE:
+            list = ['Factura Comercial', 'Etiquetas', 'Documento DAE'];
+            break;
+
+        default:
+            console.log('invalid');
+      }
+      return list;
     }
 
     public deleteFicheroCliente(id){

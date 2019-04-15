@@ -55,6 +55,7 @@ export class ExpedienteEditPage {
         this.expedienteDocument = this.expedienteService.getExpediente(this.idExpediente);
         this.expedienteDocument.valueChanges().subscribe(exp => {
             this.expediente= exp;
+            this.expediente.ExpedienteSubTipo=ExpedienteSubTipo.DespachoAereoImportacion;
         })
       }
     }

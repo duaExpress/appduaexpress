@@ -16,7 +16,7 @@ export enum ExpedienteSubTipo {
   DespachoAereoImportacion = "AIM",
   DocRecogida = "DR",
   DAE = "DAE",
-  RevisionFisica = "RF",
+  RevisionParaduanera = "RP",
   //Marítimo
   DespachoMaritimoExportacion = "MEX"
 }

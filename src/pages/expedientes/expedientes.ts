@@ -26,7 +26,7 @@ export class ExpedientesPage {
     { id:ExpedienteSubTipo.DocEntega, label:'Entrega Documentación' },
     { id:ExpedienteSubTipo.DocRecogida, label:'Recogida Documentos' },
     { id:ExpedienteSubTipo.DAE, label:'DAE' },
-    { id:ExpedienteSubTipo.RevisionFisica, label:'Revisión Física' }
+    { id:ExpedienteSubTipo.RevisionParaduanera, label:'Revisión Paraduanera' }
   ];
 
   settings = {
