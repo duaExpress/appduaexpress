@@ -1,7 +1,9 @@
 <!-- Generated template for the FicherosClienteComponent component -->
 <div>
-  <BR><b>Conocimiento aéreo</b> <input type="file" (change)="upload($event, 'conocimiento_aereo')" />
-  <BR><b>Factura Comercial </b> <input type="file" (change)="upload($event, 'factura_comercial')" />
-  <div>{{ uploadPercent | async }}</div>
+  <BR><b>Tipo de Fichero a subir: </b><select [(ngModel)]="tipoFicheroSel">
+      <option *ngFor="let expTipo of tiposFichero" [ngValue]="expTipo">{{ expTipo }}</option>
+    </select>
+   <input type="file" (change)="upload($event)" />{{ uploadPercent | async }}%
+   <BR> Ficheros subidos: <BR>  
   <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
 </div>

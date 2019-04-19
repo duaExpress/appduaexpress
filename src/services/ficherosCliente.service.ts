@@ -25,7 +25,8 @@ export class FicherosClienteService{
         id,
         idExpediente:this.getValueFromString(ficheroCliente.idExpediente),
         uidCliente: this.getValueFromString(ficheroCliente.uidCliente),
-        urlDownload: this.getValueFromString(ficheroCliente.urlDownload)
+        urlDownload: this.getValueFromString(ficheroCliente.urlDownload),
+        tipoFichero: this.getValueFromString(ficheroCliente.tipoFichero)
       });
     }
 

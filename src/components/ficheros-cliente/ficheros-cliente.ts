@@ -10,6 +10,7 @@ import { finalize } from 'rxjs/operators';
 import { FicherosClienteService } from '../../services/ficherosCliente.service';
 import { UserService } from '../../services/user.services';
 import { FicheroCliente } from '../../models/ficheroCliente';
+import { ExpedienteSubTipo } from '../../models/global.enum';
 
 /**
  * Generated class for the FicherosClienteComponent component.
@@ -28,6 +29,8 @@ export class FicherosClienteComponent {
   idExpediente : any;
   localUser : any;
   ficheroCliente : FicheroCliente;
+  tiposFichero : string[];
+  tipoFicheroSel: string;
 
   constructor(
     public navCtrl: NavController,
@@ -39,14 +42,17 @@ export class FicherosClienteComponent {
       this.idExpediente = this.navParams.get("idExpediente");
       this.localUser = this.userService.getLocalUser();
       console.log('UID: ' + this.localUser.user.uid);
+      this.tiposFichero = this.ficherosService.getTiposFicheros(ExpedienteSubTipo.DespachoAereoExportacion);
   }
 
 
-  upload(event, nombreCampo) {
+  upload(event) {
 
     this.ficheroCliente= new FicheroCliente();
     this.ficheroCliente.idExpediente= this.idExpediente;
     this.ficheroCliente.uidCliente=this.localUser.user.uid;
+    console.log('Tipo ' + this.tipoFicheroSel);
+    this.ficheroCliente.tipoFichero= this.tipoFicheroSel; 
 
 
     const id = Math.random().toString(36).substring(2);

@@ -4,4 +4,5 @@ export class FicheroCliente {
   idExpediente : string;
   uidCliente: string;
   urlDownload: string;
+  tipoFichero: string;
 }
