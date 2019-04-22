@@ -46,8 +46,8 @@ export class FicherosClienteComponent {
         width: '30%',
         class: 'align-center',
       },
-      urlDownload: {
-        title: 'Descargar',
+      nombreFichero: {
+        title: 'Fichero',
         width: '70%',
         class: 'align-center',
       }
@@ -99,6 +99,7 @@ export class FicherosClienteComponent {
     task.snapshotChanges().pipe(
         finalize(() => (this.downloadURL = fileRef.getDownloadURL()).subscribe((urlObs) => {
           if(this.ficheroCliente.urlDownload == undefined || this.ficheroCliente.urlDownload==''){
+              this.ficheroCliente.nombreFichero = file.name;
               this.ficheroCliente.urlDownload = filePath;
               this.ficherosService.saveFichero(this.ficheroCliente);
               console.log('guardado');
@@ -106,6 +107,13 @@ export class FicherosClienteComponent {
         })
         )
      ).subscribe()
+  }
+
+  tieneNumExpediente(){
+    if(this.idExpediente != undefined && this.idExpediente != '0'){
+      return true;
+    }
+    return false;
   }
 
 }

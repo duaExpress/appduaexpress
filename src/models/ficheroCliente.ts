@@ -5,4 +5,5 @@ export class FicheroCliente {
   uidCliente: string;
   urlDownload: string;
   tipoFichero: string;
+  nombreFichero: string;
 }
