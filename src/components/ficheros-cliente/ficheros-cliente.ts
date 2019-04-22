@@ -24,6 +24,7 @@ import { ExpedienteSubTipo } from '../../models/global.enum';
 })
 export class FicherosClienteComponent {
 
+  ficherosCliente: Observable<FicheroCliente[]>;
   uploadPercent: Observable<number>;
   downloadURL= new Observable<string>();
   idExpediente : any;
@@ -31,6 +32,36 @@ export class FicherosClienteComponent {
   ficheroCliente : FicheroCliente;
   tiposFichero : string[];
   tipoFicheroSel: string;
+
+  settings = {
+    actions: {
+      columnTitle: 'Acciones',
+      position: 'right',
+      add: false,
+      class: 'align-center',
+    },
+    columns: {
+      tipoFichero: {
+        title: 'Tipo',
+        width: '30%',
+        class: 'align-center',
+      },
+      urlDownload: {
+        title: 'Descargar',
+        width: '70%',
+        class: 'align-center',
+      }
+    },
+    delete :{
+      confirmDelete: true,
+      deleteButtonContent: '<center class="icon-trash">Borrar</center>',
+      cancelButtonContent: '<center class="icon-close">Cancelar</center>'
+    },
+    attr: {
+      class: 'table table-bordered'
+    },
+    noDataMessage: '',
+  };
 
   constructor(
     public navCtrl: NavController,
@@ -43,6 +74,7 @@ export class FicherosClienteComponent {
       this.localUser = this.userService.getLocalUser();
       console.log('UID: ' + this.localUser.user.uid);
       this.tiposFichero = this.ficherosService.getTiposFicheros(ExpedienteSubTipo.DespachoAereoExportacion);
+      this.ficherosCliente = this.ficherosService.getFicherosExpediente(this.idExpediente).valueChanges();
   }
 
 
@@ -52,7 +84,7 @@ export class FicherosClienteComponent {
     this.ficheroCliente.idExpediente= this.idExpediente;
     this.ficheroCliente.uidCliente=this.localUser.user.uid;
     console.log('Tipo ' + this.tipoFicheroSel);
-    this.ficheroCliente.tipoFichero= this.tipoFicheroSel; 
+    this.ficheroCliente.tipoFichero= this.tipoFicheroSel;
 
 
     const id = Math.random().toString(36).substring(2);

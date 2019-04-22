@@ -4,6 +4,11 @@
       <option *ngFor="let expTipo of tiposFichero" [ngValue]="expTipo">{{ expTipo }}</option>
     </select>
    <input type="file" (change)="upload($event)" />{{ uploadPercent | async }}%
-   <BR> Ficheros subidos: <BR>  
+   <BR> Ficheros subidos: <BR>
   <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+
+  <div>
+    <ng2-smart-table [settings]="settings" [source]="ficherosCliente | async">
+    </ng2-smart-table>
+  </div>
 </div>

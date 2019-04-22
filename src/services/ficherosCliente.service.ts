@@ -69,8 +69,11 @@ export class FicherosClienteService{
 
    public getFicheros():AngularFirestoreCollection<FicheroCliente>{
     return this.database.collection('ficherosCliente');
-  }
+   }
 
+    public getFicherosExpediente(id):AngularFirestoreCollection<FicheroCliente>{
+      return this.database.collection('ficherosCliente', ref => ref.where('idExpediente', '==', id))
+    }
 
     private getValueFromString(value:string){
       if (value === undefined || value == null){
