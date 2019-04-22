@@ -31,6 +31,7 @@ export class ExpedienteService{
         peso: this.getValueFromNumber(expediente.peso),
         fecha:this.getDateNow()
       });
+      return id;
     }
 
     public updateExpediente(expediente: Expediente){

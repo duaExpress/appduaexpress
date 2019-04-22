@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import * as moment from 'moment';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { ExpedienteEditPage } from '../../pages/expediente-edit/expediente-edit';
 
 /**
  * Generated class for the AereoDespachoComponent component.
@@ -46,7 +47,6 @@ export class AereoDespachoComponent {
             this.expediente= exp;
         })
       }
-
     }
 
     ionViewDidLoad() {
@@ -54,15 +54,12 @@ export class AereoDespachoComponent {
 
     public editExpediente() {
 
-      console.log('exp: ' + this.expediente);
-
       if(this.idExpediente == '0'){
-        this.expedienteService.saveExpediente(this.expediente);
+        this.idExpediente= this.expedienteService.saveExpediente(this.expediente);
       }else{
         this.expedienteService.updateExpediente(this.expediente);
       }
-      this.navCtrl.pop();
+      this.navCtrl.setRoot(ExpedienteEditPage, {idExpediente: this.idExpediente});
     }
-
 
 }
