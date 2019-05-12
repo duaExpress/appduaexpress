@@ -11,7 +11,7 @@
 
   <BR>
   <div>
-    <ng2-smart-table [settings]="settings" [source]="ficherosCliente | async">
+    <ng2-smart-table [settings]="settings" [source]="ficherosCliente | async" (deleteConfirm)="deleteFichero($event)">
     </ng2-smart-table>
   </div>
 </div>

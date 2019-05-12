@@ -38,6 +38,7 @@ export class FicherosClienteComponent {
       columnTitle: 'Acciones',
       position: 'right',
       add: false,
+      edit: false,
       class: 'align-center',
     },
     columns: {
@@ -83,7 +84,7 @@ export class FicherosClienteComponent {
     this.ficheroCliente= new FicheroCliente();
     this.ficheroCliente.idExpediente= this.idExpediente;
     this.ficheroCliente.uidCliente=this.localUser.user.uid;
-    console.log('Tipo ' + this.tipoFicheroSel);
+   // console.log('Tipo ' + this.tipoFicheroSel);
     this.ficheroCliente.tipoFichero= this.tipoFicheroSel;
 
 
@@ -102,7 +103,7 @@ export class FicherosClienteComponent {
               this.ficheroCliente.nombreFichero = file.name;
               this.ficheroCliente.urlDownload = filePath;
               this.ficherosService.saveFichero(this.ficheroCliente);
-              console.log('guardado');
+              //console.log('guardado');
             }
         })
         )
@@ -114,6 +115,15 @@ export class FicherosClienteComponent {
       return true;
     }
     return false;
+  }
+
+  deleteFichero(event){
+    if (window.confirm('¿Estas seguro que quieres borrar el fichero seleccionado?')) {
+      this.ficherosService.deleteFicheroCliente(event.data.id);
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
   }
 
 }

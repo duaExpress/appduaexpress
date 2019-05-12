@@ -60,7 +60,8 @@ export class FicherosClienteService{
     }
 
     public deleteFicheroCliente(id){
-      this.ficherosCliente.doc(id).delete();
+      this.database.doc(`ficherosCliente/${id}`).delete();
+
     }
 
     private getDateNow(){
