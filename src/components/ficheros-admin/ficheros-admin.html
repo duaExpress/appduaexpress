@@ -1,4 +1,19 @@
-<!-- Generated template for the FicherosAdminComponent component -->
-<div>
-  {{text}}
+<!-- Generated template for the FicherosClienteComponent component -->
+
+
+<div *ngIf="tieneNumExpediente()">
+  <BR><b>Tipo de Fichero a subir: </b> <input type="text" [(ngModel)]="tipoFicheroSel" class="form-control" required />
+   <input type="file" (change)="upload($event)" />{{ uploadPercent | async }}%
+   <BR> Ficheros subidos: <BR>
+  <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+
+  <BR>
+  <div>
+    <ng2-smart-table [settings]="settings" [source]="ficherosAdmin | async" (deleteConfirm)="deleteFichero($event)">
+    </ng2-smart-table>
+  </div>
+</div>
+
+<div *ngIf="!tieneNumExpediente()">
+  <BR><B>Guarde datos del expediente antes de subir ficheros</B>
 </div>

@@ -29,9 +29,6 @@ export class FicherosAdminService{
       });
     }
 
-
-
-
     public deleteFicheroAdmin(id){
       this.database.doc(`ficherosAdmin/${id}`).delete();
 
@@ -40,7 +37,6 @@ export class FicherosAdminService{
     private getDateNow(){
       return this.datepipe.transform(new Date(), 'dd-MM-yyyy HH:mm:ss');
     }
-
 
     public getFicherosExpediente(id):AngularFirestoreCollection<FicheroAdmin>{
       return this.database.collection('ficherosAdmin', ref => ref.where('idExpediente', '==', id))
