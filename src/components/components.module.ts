@@ -6,6 +6,7 @@ import { DaeComponent } from './dae/dae';
 import { EntregaDocumentacionComponent } from './entrega-documentacion/entrega-documentacion';
 import { FicherosClienteComponent } from './ficheros-cliente/ficheros-cliente';
 import { FicherosAdminComponent } from './ficheros-admin/ficheros-admin';
+import { IncidenciasComponent } from './incidencias/incidencias';
 @NgModule({
 	declarations: [AereoDespachoComponent,
     AereoImportComponent,
@@ -13,7 +14,8 @@ import { FicherosAdminComponent } from './ficheros-admin/ficheros-admin';
     DaeComponent,
     EntregaDocumentacionComponent,
     FicherosClienteComponent,
-    FicherosAdminComponent],
+    FicherosAdminComponent,
+    IncidenciasComponent],
 	imports: [IonicModule],
 	exports: [AereoDespachoComponent,
     AereoImportComponent,
@@ -21,6 +23,7 @@ import { FicherosAdminComponent } from './ficheros-admin/ficheros-admin';
     DaeComponent,
     EntregaDocumentacionComponent,
     FicherosClienteComponent,
-    FicherosAdminComponent]
+    FicherosAdminComponent,
+    IncidenciasComponent]
 })
 export class ComponentsModule {}
