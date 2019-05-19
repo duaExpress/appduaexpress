@@ -20,6 +20,8 @@ export class ExpedienteService{
 
       const id = this.database.createId();
 
+      console.log(expediente);
+
       this.database.doc(`expedientes/${id}`).set({
         id,
         numExpediente:this.getValueFromString(expediente.numExpediente),
@@ -29,7 +31,9 @@ export class ExpedienteService{
         partida: this.getValueFromString(expediente.partida),
         fechaVuelo: this.getValueFromString(expediente.fechaVuelo),
         peso: this.getValueFromNumber(expediente.peso),
-        fecha:this.getDateNow()
+        fecha:this.getDateNow(),
+        ExpedienteTipo: this.getValueFromString(expediente.ExpedienteTipo),
+        ExpedienteSubTipo: expediente.ExpedienteSubTipo
       });
       return id;
     }
