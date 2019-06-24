@@ -1,6 +1,7 @@
 
 export class Incidencia {
 
+  id: string;
   origen : string;
   abiertaPor: string;
   nif: string;
