@@ -40,8 +40,10 @@ import { DaeComponent } from '../components/dae/dae';
 import { EntregaDocumentacionComponent } from '../components/entrega-documentacion/entrega-documentacion';
 import { FicherosClienteComponent } from '../components/ficheros-cliente/ficheros-cliente';
 import { FicherosAdminComponent } from '../components/ficheros-admin/ficheros-admin';
+import { IncidenciasComponent } from '../components/incidencias/incidencias';
 import { FicherosClienteService } from '../services/ficherosCliente.service';
 import { FicherosAdminService } from '../services/ficherosAdmin.service';
+import { IncidenciaService } from '../services/incidencia.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCb7no2ZguQECh7appTgDkrLOrwcW5_9x4",
@@ -70,7 +72,8 @@ defineLocale('en', enGbLocale);
     DaeComponent,
     EntregaDocumentacionComponent,
     FicherosClienteComponent,
-    FicherosAdminComponent
+    FicherosAdminComponent,
+    IncidenciasComponent
   ],
   imports: [
     BrowserModule,
@@ -105,6 +108,7 @@ defineLocale('en', enGbLocale);
     ExpedienteService,
     FicherosClienteService,
     FicherosAdminService,
+    IncidenciaService,
     DatePipe,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]

@@ -1,4 +1,10 @@
-<!-- Generated template for the IncidenciasComponent component -->
-<div>
-  {{text}}
+<div *ngIf="tieneNumExpediente()">
+
+  <BR>
+  <div>
+    <ng2-smart-table [settings]="settings" [source]="incidencias | async" (deleteConfirm)="deleteIncidencia($event)">
+    </ng2-smart-table>
+  </div>
 </div>
+
+

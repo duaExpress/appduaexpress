@@ -61,18 +61,6 @@ export class IncidenciaService{
       return this.database.collection('incidencias', ref => ref.where('expedienteSancionador', '==', id))
     }
 
-    public getIncidencia(id: string): AngularFirestoreDocument<Incidencia>{
-
-      /*filterBy(categoriaToFilter: string) {s
-        this.avisos = this.afs.collection('avisos', ref => ref.where('categoria','==', categoriaToFilter )).valueChanges()
-
-        return this.avisos;
-      };*/
-
-      console.log('buscando: ' + id);
-      return this.database.collection('incidencias').doc(id);
-    }
-
     public getIncidencias():AngularFirestoreCollection<Incidencia>{
       return this.database.collection(`incidencias`);
     }
@@ -97,4 +85,5 @@ export class IncidenciaService{
       }
     }
 }
-incidencias: AngularFirestoreCollection<any>;
+
+
