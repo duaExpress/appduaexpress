@@ -88,7 +88,7 @@ export class IncidenciasComponent {
     }
     return false;
   }
-  tieneNumExpediente
+
   deleteIncidencia(event){
     if (window.confirm('¿Estas seguro que quieres borrar la incidencia seleccionada?')) {
       this.incidenciaService.deleteIncidencia(event.data.id);

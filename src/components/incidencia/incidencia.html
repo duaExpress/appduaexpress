@@ -1,0 +1,35 @@
+<!-- Generated template for the AereoDespachoComponent component -->
+<div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Abierta por:</B></span>
+      <input type="text" [(ngModel)]="incidencia.abiertaPor" class="form-control" required />
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Origen:</B></span>
+      <select class="control-select" [(ngModel)]="incidencia.origen">
+        <option>Aduana</option>
+        <option>Operador</option>
+      </select>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Descripci&oacute;n:</B></span>
+      <input type="text" [(ngModel)]="incidencia.descripcion" class="form-control" required />
+    </div>
+  </div>
+
+  <div class="row form-control">
+    <button class="button-new" (click)="editIncidencia()">Guardar</button>
+    <div class="white-space"></div>
+  </div>
+
+</div>

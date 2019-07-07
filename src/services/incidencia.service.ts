@@ -53,6 +53,11 @@ export class IncidenciaService{
       });
     }
 
+    public getIncidencia(documentId: string): AngularFirestoreDocument<Incidencia>{
+         //console.log('buscando: ' + documentId);
+      return this.database.collection('incidencias').doc(documentId);
+    }
+
     public deleteIncidencia(id: string){
       this.database.doc(id).delete();
     }
