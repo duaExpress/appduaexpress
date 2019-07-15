@@ -13,5 +13,6 @@ export class Incidencia {
   liquidacionesComplementarias: string;
   documentacionRelacionada: string;
   descripcion: string;
+  accion: string;
 
 }

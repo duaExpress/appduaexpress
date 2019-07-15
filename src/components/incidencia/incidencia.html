@@ -5,9 +5,7 @@
       <span class="label-text"><B>Abierta por:</B></span>
       <input type="text" [(ngModel)]="incidencia.abiertaPor" class="form-control" required />
     </div>
-
   </div>
-
   <div class="row">
     <div class="col-2 form-group">
       <span class="label-text"><B>Origen:</B></span>
@@ -17,13 +15,75 @@
       </select>
     </div>
   </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>NIF:</B></span>
+      <input type="text" [(ngModel)]="incidencia.NIF" class="form-control" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Comunicaci&oacute; a la aduana:</B></span>
+      <select class="control-select" [(ngModel)]="incidencia.comunicadoAduana">
+        <option>No Comunicado</option>
+        <option>Comunicado</option>
+      </select>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Tratado en la reunión :</B></span>
+      <select class="control-select" [(ngModel)]="incidencia.tratado">
+        <option>SI</option>
+        <option>NO</option>
+      </select>
+    </div>
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Incorporado en ficha del cliente :</B></span>
+      <select class="control-select" [(ngModel)]="incidencia.incorporadoFicha">
+        <option>SI</option>
+        <option>NO</option>
+      </select>
+    </div>
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Estado:</B></span>
+      <select class="control-select" [(ngModel)]="incidencia.estado">
+        <option>Abierta</option>
+        <option>Cerrado</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Expediente Sancionador:</B></span>
+      <input type="text" [(ngModel)]="incidencia.expedienteSancionador" class="form-control" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Liquidaciones complementarias :</B></span>
+      <input type="text" [(ngModel)]="incidencia.liquidacionesComplementarias" class="form-control" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Documentación relacionada :</B></span>
+      <input type="text" [(ngModel)]="incidencia.documentacionRelacionada" class="form-control" required />
+    </div>
+  </div>
 
 
   <div class="row">
     <div class="col-2 form-group">
       <span class="label-text"><B>Descripci&oacute;n:</B></span>
       <input type="text" [(ngModel)]="incidencia.descripcion" class="form-control" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Acción Correctora Aplicada:</B></span>
+      <input type="text" [(ngModel)]="incidencia.accion" class="form-control" required />
     </div>
   </div>
 
