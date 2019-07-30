@@ -41,6 +41,7 @@ import { EntregaDocumentacionComponent } from '../components/entrega-documentaci
 import { FicherosClienteComponent } from '../components/ficheros-cliente/ficheros-cliente';
 import { FicherosAdminComponent } from '../components/ficheros-admin/ficheros-admin';
 import { IncidenciasComponent } from '../components/incidencias/incidencias';
+import { IncidenciaComponent } from '../components/incidencia/incidencia';
 import { FicherosClienteService } from '../services/ficherosCliente.service';
 import { FicherosAdminService } from '../services/ficherosAdmin.service';
 import { IncidenciaService } from '../services/incidencia.service';
@@ -73,7 +74,8 @@ defineLocale('en', enGbLocale);
     EntregaDocumentacionComponent,
     FicherosClienteComponent,
     FicherosAdminComponent,
-    IncidenciasComponent
+    IncidenciasComponent,
+    IncidenciaComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +99,8 @@ defineLocale('en', enGbLocale);
     LoginPage,
     UsuariosPage,
     RegisterPage,
-    LogoutPage
+    LogoutPage,
+    IncidenciaComponent
   ],
   providers: [
     StatusBar,

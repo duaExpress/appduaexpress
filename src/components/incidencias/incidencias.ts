@@ -8,8 +8,7 @@ import { finalize } from 'rxjs/operators';
 import { IncidenciaService } from '../../services/incidencia.service';
 import { UserService } from '../../services/user.services';
 import { Incidencia } from '../../models/incidencia';
-import { ExpedienteSubTipo } from '../../models/global.enum';
-
+import { IncidenciaComponent } from '../../components/incidencia/incidencia';
 
 @Component({
   selector: 'incidencias',
@@ -96,6 +95,13 @@ export class IncidenciasComponent {
     } else {
       event.confirm.reject();
     }
+  }
+
+
+  public newIncidencia(event) {
+
+    this.navCtrl.push(IncidenciaComponent,{idExpediente: this.idExpediente});
+
   }
 
 }

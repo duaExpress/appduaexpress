@@ -37,12 +37,17 @@ export class IncidenciaComponent {
     this.idExpediente = this.navParams.get("idExpediente");
     this.idIncidencia = this.navParams.get("idIncidencia");
     this.localUser = this.userService.getLocalUser();
+    console.log('ID Incidencia: ' +  this.idIncidencia + ", IdExp: " + this.idExpediente);
+
     console.log('UID: ' + this.localUser.user.uid);
 
-    if(this.idIncidencia != '0' ){
+    if(this.idIncidencia != '0' && this.idIncidencia != undefined){
       this.incidenciaService.getIncidencia(this.idIncidencia).valueChanges().subscribe(inc => {
           this.incidencia= inc;
       })
+    }else{
+      this.incidencia = new Incidencia();
+      this.idIncidencia=0;
     }
 
   }

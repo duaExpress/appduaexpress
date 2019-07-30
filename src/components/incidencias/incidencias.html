@@ -1,6 +1,10 @@
 <div *ngIf="tieneNumExpediente()">
 
   <BR>
+    <div class="row form-control">
+      <button class="button-new" (click)="newIncidencia($event)">Nueva Incidencia</button>
+      <div class="white-space"></div>
+    </div>
   <div>
     <ng2-smart-table [settings]="settings" [source]="incidencias | async" (deleteConfirm)="deleteIncidencia($event)">
     </ng2-smart-table>
