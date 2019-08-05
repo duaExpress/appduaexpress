@@ -1,3 +1,75 @@
 ficheros-admin {
+  .top120 {
+    margin-top: 120px !important;
+  }
 
+  .button-new {
+    background-color: #5CB85C;
+    height: 42px;
+  }
+
+  .table {
+    font-size:16px;
+
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    border-width: 2px;
+
+    display: table;
+    border-spacing: 2px;
+    border-color: grey;
+  }
+
+  .table > tbody > tr > td {
+    box-sizing: border-box;
+    border: 1px solid grey;
+  }
+
+  .table thead > tr > th  {
+    border: 1px solid grey;
+    background-color: #9A0C51;
+    color: #FFFFFF;
+  }
+
+  .icon-trash {
+    background-image: url("../../assets/imgs/icons/trash.svg");
+    background-repeat: no-repeat;
+  }
+
+  .icon-close {
+    background-image: url("../../assets/imgs/icons/close.svg");
+    background-repeat: no-repeat;
+  }
+
+  .icon-edit {
+    background-image: url("../../assets/imgs/icons/edit.svg");
+    background-repeat: no-repeat;
+  }
+
+  .icon-acept {
+    background-image: url("../../assets/imgs/icons/acept.svg");
+    background-repeat: no-repeat;
+  }
+
+  ng2-smart-table-title > a {
+    color: #FFFFFF !important;
+  }
+
+  .form-control {
+    border: 0px !important;
+    padding-left: 15px;
+  }
+
+  .white-space {
+    width: 6px;
+  }
+
+  .align-center {
+    text-align: center;
+  }
+
+  .ng2-smart-title {
+    text-align: center !important;
+  }
 }
