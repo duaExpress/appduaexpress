@@ -24,9 +24,9 @@ export class IncidenciaService{
         origen: this.getValueFromString(incidencia.origen),
         abiertaPor: this.getValueFromString(incidencia.abiertaPor),
         nif: this.getValueFromString(incidencia.nif),
-        comunicadoAduana: incidencia.comunicadoAduana,
-        tratado: incidencia.tratado,
-        incorporadoFicha: incidencia.incorporadoFicha,
+        comunicadoAduana: this.getValueFromBoolean(incidencia.comunicadoAduana),
+        tratado: this.getValueFromBoolean(incidencia.tratado),
+        incorporadoFicha: this.getValueFromBoolean(incidencia.incorporadoFicha),
         estado: this.getValueFromString(incidencia.estado),
         expedienteSancionador:this.getValueFromString(incidencia.expedienteSancionador),
         liquidacionesComplementarias: this.getValueFromString(incidencia.liquidacionesComplementarias),
@@ -85,6 +85,14 @@ export class IncidenciaService{
     private getValueFromNumber(value:number){
       if (value === undefined || value == null){
         return '';
+      } else {
+        return value;
+      }
+    }
+
+    private getValueFromBoolean(value:boolean){
+      if (value === undefined || value == null){
+        return false;
       } else {
         return value;
       }

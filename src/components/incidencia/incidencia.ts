@@ -9,6 +9,7 @@ import { IncidenciaService } from '../../services/incidencia.service';
 import { UserService } from '../../services/user.services';
 import { Incidencia } from '../../models/incidencia';
 import { ExpedienteSubTipo } from '../../models/global.enum';
+import { IncidenciasComponent } from '../../components/incidencias/incidencias';
 
 /**
  * Generated class for the IncidenciaComponent component.
@@ -50,6 +51,22 @@ export class IncidenciaComponent {
       this.idIncidencia=0;
     }
 
+  }
+
+
+  editIncidencia(){
+
+    if(this.idIncidencia == '0'){
+
+      this.idExpediente= this.incidenciaService.saveIncidencia(this.incidencia);
+
+    }else{
+
+      this.incidenciaService.update(this.incidencia);
+
+    }
+
+    this.navCtrl.push;
   }
 
 }
