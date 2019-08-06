@@ -49,6 +49,8 @@ export class IncidenciaComponent {
     }else{
       this.incidencia = new Incidencia();
       this.idIncidencia=0;
+      this.incidencia.expedienteSancionador = this.idExpediente;
+
     }
 
   }
@@ -66,7 +68,8 @@ export class IncidenciaComponent {
 
     }
 
-    this.navCtrl.push;
+    this.navCtrl.pop();
+   // this.navCtrl.setRoot(ExpedientesPage);
   }
 
 }

@@ -59,7 +59,7 @@ export class IncidenciaService{
     }
 
     public deleteIncidencia(id: string){
-      this.database.doc(id).delete();
+      this.database.collection('incidencias').doc(id).delete();
     }
 
     public getIncidenciasExpediente(id):AngularFirestoreCollection<Incidencia>{
@@ -88,7 +88,7 @@ export class IncidenciaService{
       } else {
         return value;
       }
-    }
+    }Mara Barros
 
     private getValueFromBoolean(value:boolean){
       if (value === undefined || value == null){
