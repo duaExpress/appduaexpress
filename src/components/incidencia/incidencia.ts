@@ -38,9 +38,7 @@ export class IncidenciaComponent {
     this.idExpediente = this.navParams.get("idExpediente");
     this.idIncidencia = this.navParams.get("idIncidencia");
     this.localUser = this.userService.getLocalUser();
-    console.log('ID Incidencia: ' +  this.idIncidencia + ", IdExp: " + this.idExpediente);
-
-    console.log('UID: ' + this.localUser.user.uid);
+    console.log('Id incidencia: ' + this.idIncidencia);
 
     if(this.idIncidencia != '0' && this.idIncidencia != undefined){
       this.incidenciaService.getIncidencia(this.idIncidencia).valueChanges().subscribe(inc => {
@@ -69,7 +67,6 @@ export class IncidenciaComponent {
     }
 
     this.navCtrl.pop();
-   // this.navCtrl.setRoot(ExpedientesPage);
   }
 
 }

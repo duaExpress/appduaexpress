@@ -26,7 +26,6 @@ export class IncidenciasComponent {
       columnTitle: 'Acciones',
       position: 'right',
       add: false,
-      edit: false,
       class: 'align-center',
     },
     columns: {
@@ -71,7 +70,6 @@ export class IncidenciasComponent {
   ) {
       this.idExpediente = this.navParams.get("idExpediente");
       this.localUser = this.userService.getLocalUser();
-      console.log('UID: ' + this.localUser.user.uid);
       this.incidencias = this.incidenciaService.getIncidenciasExpediente(this.idExpediente).valueChanges();
   }
 
@@ -97,6 +95,9 @@ export class IncidenciasComponent {
     }
   }
 
+  public editIncidencia(event) {
+    this.navCtrl.push(IncidenciaComponent,{idIncidencia: event.data.id});
+  }
 
   public newIncidencia(event) {
 

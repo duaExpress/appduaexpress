@@ -88,7 +88,7 @@ export class IncidenciaService{
       } else {
         return value;
       }
-    }Mara Barros
+    }
 
     private getValueFromBoolean(value:boolean){
       if (value === undefined || value == null){
@@ -98,5 +98,3 @@ export class IncidenciaService{
       }
     }
 }
-
-

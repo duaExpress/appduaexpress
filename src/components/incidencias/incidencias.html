@@ -6,7 +6,8 @@
       <div class="white-space"></div>
     </div>
   <div>
-    <ng2-smart-table [settings]="settings" [source]="incidencias | async" (deleteConfirm)="deleteIncidencia($event)">
+    <ng2-smart-table [settings]="settings" [source]="incidencias | async"
+    (userRowSelect)="editIncidencia($event)" (deleteConfirm)="deleteIncidencia($event)">
     </ng2-smart-table>
   </div>
 </div>
