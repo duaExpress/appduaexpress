@@ -37,6 +37,10 @@ import { esLocale, enGbLocale } from 'ngx-bootstrap/locale';
 import { AereoDespachoComponent } from '../components/aereo-despacho/aereo-despacho';
 import { AereoImportComponent} from '../components/aereo-import/aereo-import';
 import { DaeComponent } from '../components/dae/dae';
+import { VerivalorComponent } from '../components/verivalor/verivalor';
+import { VeriivaComponent } from '../components/veriiva/veriiva';
+import { VeriexpComponent } from '../components/veriexp/veriexp';
+
 import { EntregaDocumentacionComponent } from '../components/entrega-documentacion/entrega-documentacion';
 import { FicherosClienteComponent } from '../components/ficheros-cliente/ficheros-cliente';
 import { FicherosAdminComponent } from '../components/ficheros-admin/ficheros-admin';
@@ -75,7 +79,10 @@ defineLocale('en', enGbLocale);
     FicherosClienteComponent,
     FicherosAdminComponent,
     IncidenciasComponent,
-    IncidenciaComponent
+    IncidenciaComponent,
+    VerivalorComponent,
+    VeriivaComponent,
+    VeriexpComponent
   ],
   imports: [
     BrowserModule,
@@ -100,7 +107,10 @@ defineLocale('en', enGbLocale);
     UsuariosPage,
     RegisterPage,
     LogoutPage,
-    IncidenciaComponent
+    IncidenciaComponent,
+    VerivalorComponent,
+    VeriivaComponent,
+    VeriexpComponent
   ],
   providers: [
     StatusBar,

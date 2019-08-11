@@ -8,6 +8,9 @@ import { FicherosClienteComponent } from './ficheros-cliente/ficheros-cliente';
 import { FicherosAdminComponent } from './ficheros-admin/ficheros-admin';
 import { IncidenciasComponent } from './incidencias/incidencias';
 import { IncidenciaComponent } from './incidencia/incidencia';
+import { VerivalorComponent } from './verivalor/verivalor';
+import { VeriivaComponent } from './veriiva/veriiva';
+import { VeriexpComponent } from './veriexp/veriexp';
 @NgModule({
 	declarations: [AereoDespachoComponent,
     AereoImportComponent,
@@ -17,7 +20,10 @@ import { IncidenciaComponent } from './incidencia/incidencia';
     FicherosClienteComponent,
     FicherosAdminComponent,
     IncidenciasComponent,
-    IncidenciaComponent],
+    IncidenciaComponent,
+    VerivalorComponent,
+    VeriivaComponent,
+    VeriexpComponent],
 	imports: [IonicModule],
 	exports: [AereoDespachoComponent,
     AereoImportComponent,
@@ -27,6 +33,9 @@ import { IncidenciaComponent } from './incidencia/incidencia';
     FicherosClienteComponent,
     FicherosAdminComponent,
     IncidenciasComponent,
-    IncidenciaComponent]
+    IncidenciaComponent,
+    VerivalorComponent,
+    VeriivaComponent,
+    VeriexpComponent]
 })
 export class ComponentsModule {}
