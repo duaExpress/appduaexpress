@@ -23,7 +23,8 @@ import { IncidenciasComponent } from '../../components/incidencias/incidencias';
 })
 export class IncidenciaComponent {
 
-  incidencia: Incidencia;
+  incidenciaDocument: AngularFirestoreDocument<Incidencia>;
+  incidencia= new Incidencia();
   idExpediente : any;
   idIncidencia : any;
   localUser : any;
@@ -38,17 +39,21 @@ export class IncidenciaComponent {
     this.idExpediente = this.navParams.get("idExpediente");
     this.idIncidencia = this.navParams.get("idIncidencia");
     this.localUser = this.userService.getLocalUser();
-    console.log('Id incidencia: ' + this.idIncidencia);
 
     if(this.idIncidencia != '0' && this.idIncidencia != undefined){
-      this.incidenciaService.getIncidencia(this.idIncidencia).valueChanges().subscribe(inc => {
+      this.incidenciaDocument = this.incidenciaService.getIncidencia(this.idIncidencia);
+      this.incidenciaDocument.valueChanges().subscribe(inc => {
           this.incidencia= inc;
       })
     }else{
-      this.incidencia = new Incidencia();
+
       this.idIncidencia=0;
       this.incidencia.expedienteSancionador = this.idExpediente;
-
+      this.incidencia.origen='Operador';
+      this.incidencia.comunicadoAduana='NO';
+      this.incidencia.tratado='NO';
+      this.incidencia.incorporadoFicha='NO';
+      this.incidencia.estado='Abierta';
     }
 
   }
@@ -62,7 +67,7 @@ export class IncidenciaComponent {
 
     }else{
 
-      this.incidenciaService.update(this.incidencia);
+       this.incidenciaService.update(this.incidencia);
 
     }
 

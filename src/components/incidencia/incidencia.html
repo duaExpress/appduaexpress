@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-2 form-group">
         <span class="label-text"><B>Abierta por:</B></span>
-        <input type="text" [(ngModel)]="incidencia.abiertaPor" class="form-control" required />
+        <input type="text" [(ngModel)]="incidencia.abiertaPor" required />
       </div>
     </div>
     <div class="row">
@@ -26,15 +26,14 @@
     <div class="row">
       <div class="col-2 form-group">
         <span class="label-text"><B>NIF:</B></span>
-        <input type="text" [(ngModel)]="incidencia.NIF" class="form-control" required />
-      </div>editIncidencia
-    </div>editIncidencia
-    <div class="row">editIncidencia
-      <div class="col-2 form-group">editIncidencia
-        <span class="label-text"><B>Comunicaci&oacute; a la aduana:</B></span>editIncidencia
-        <select class="control-select" [(ngModel)]="incidencia.comunicadoAduaneditIncidenciaa">
-          <option>No Comunicado</option>
-          <option>Comunicado</option>
+        <input type="text" [(ngModel)]="incidencia.NIF"  required />
+      </div>
+
+      <div class="col-2 form-group">
+        <span class="label-text"><B>Comunicaci&oacute; a la aduana:</B></span>
+        <select class="control-select" [(ngModel)]="incidencia.comunicadoAduana">
+          <option>SI</option>
+          <option>NO</option>
         </select>
       </div>
     </div>
@@ -62,22 +61,17 @@
         </select>
       </div>
     </div>
-    <div class="row">
-      <div class="col-2 form-group">
-        <span class="label-text"><B>Expediente Sancionador:</B></span>
-        <input type="text" [(ngModel)]="incidencia.expedienteSancionador" class="form-control" required />
-      </div>
-    </div>
+
     <div class="row">
       <div class="col-2 form-group">
         <span class="label-text"><B>Liquidaciones complementarias :</B></span>
-        <input type="text" [(ngModel)]="incidencia.liquidacionesComplementarias" class="form-control" required />
+        <input type="text" [(ngModel)]="incidencia.liquidacionesComplementarias" required />
       </div>
     </div>
     <div class="row">
       <div class="col-2 form-group">
         <span class="label-text"><B>Documentación relacionada :</B></span>
-        <input type="text" [(ngModel)]="incidencia.documentacionRelacionada" class="form-control" required />
+        <input type="text" [(ngModel)]="incidencia.documentacionRelacionada" required />
       </div>
     </div>
 
@@ -85,13 +79,13 @@
     <div class="row">
       <div class="col-2 form-group">
         <span class="label-text"><B>Descripci&oacute;n:</B></span>
-        <input type="text" [(ngModel)]="incidencia.descripcion" class="form-control" required />
+        <input type="text" [(ngModel)]="incidencia.descripcion" required />
       </div>
     </div>
     <div class="row">
       <div class="col-2 form-group">
         <span class="label-text"><B>Acción Correctora Aplicada:</B></span>
-        <input type="text" [(ngModel)]="incidencia.accion" class="form-control"  required />
+        <input type="text" [(ngModel)]="incidencia.accion"   required />
       </div>
     </div>
 

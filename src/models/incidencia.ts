@@ -5,9 +5,9 @@ export class Incidencia {
   origen : string;
   abiertaPor: string;
   nif: string;
-  comunicadoAduana: boolean;
-  tratado: boolean;
-  incorporadoFicha: boolean;
+  comunicadoAduana: string;
+  tratado: string;
+  incorporadoFicha: string;
   estado: string;
   expedienteSancionador: string;
   liquidacionesComplementarias: string;

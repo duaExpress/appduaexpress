@@ -24,9 +24,9 @@ export class IncidenciaService{
         origen: this.getValueFromString(incidencia.origen),
         abiertaPor: this.getValueFromString(incidencia.abiertaPor),
         nif: this.getValueFromString(incidencia.nif),
-        comunicadoAduana: this.getValueFromBoolean(incidencia.comunicadoAduana),
-        tratado: this.getValueFromBoolean(incidencia.tratado),
-        incorporadoFicha: this.getValueFromBoolean(incidencia.incorporadoFicha),
+        comunicadoAduana: this.getValueFromString(incidencia.comunicadoAduana),
+        tratado: this.getValueFromString(incidencia.tratado),
+        incorporadoFicha: this.getValueFromString(incidencia.incorporadoFicha),
         estado: this.getValueFromString(incidencia.estado),
         expedienteSancionador:this.getValueFromString(incidencia.expedienteSancionador),
         liquidacionesComplementarias: this.getValueFromString(incidencia.liquidacionesComplementarias),
@@ -38,13 +38,13 @@ export class IncidenciaService{
 
     public update(incidencia: Incidencia){
 
-      this.database.doc(incidencia.id).update({
+      this.database.doc(`incidencias/${incidencia.id}`).update({
         origen: this.getValueFromString(incidencia.origen),
         abiertaPor: this.getValueFromString(incidencia.abiertaPor),
         nif: this.getValueFromString(incidencia.nif),
-        comunicadoAduana: incidencia.comunicadoAduana,
-        tratado: incidencia.tratado,
-        incorporadoFicha: incidencia.incorporadoFicha,
+        comunicadoAduana: this.getValueFromString(incidencia.comunicadoAduana),
+        tratado: this.getValueFromString(incidencia.tratado),
+        incorporadoFicha: this.getValueFromString(incidencia.incorporadoFicha),
         estado: this.getValueFromString(incidencia.estado),
         expedienteSancionador:this.getValueFromString(incidencia.expedienteSancionador),
         liquidacionesComplementarias: this.getValueFromString(incidencia.liquidacionesComplementarias),
@@ -54,8 +54,7 @@ export class IncidenciaService{
     }
 
     public getIncidencia(documentId: string): AngularFirestoreDocument<Incidencia>{
-         //console.log('buscando: ' + documentId);
-      return this.database.collection('incidencias').doc(documentId);
+        return this.database.collection('incidencias').doc(documentId);
     }
 
     public deleteIncidencia(id: string){
