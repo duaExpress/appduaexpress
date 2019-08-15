@@ -1,6 +1,7 @@
 
 export class ExpedienteVerificacion{
 
+  id: string;
 	//Valor
 	valorFactura: boolean;
 	tipoDivisa: boolean;
@@ -23,7 +24,7 @@ export class ExpedienteVerificacion{
 	transporteInterior: boolean;
 	otraAdicion: boolean;
 	baseIVA: boolean;
-	ImporteGastosIVA: boolean;
+	importeGastosIVA: boolean;
 	tipoImpositivo: boolean;
 	recargoEquivalencia: boolean;
 	pagarIVA: boolean;
