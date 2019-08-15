@@ -26,7 +26,7 @@ export class VerivalorComponent {
   idExpediente: string;
   expedienteDocument: AngularFirestoreDocument<Expediente>;
   expediente: Expediente;
-  expVerificacion: ExpedienteVerificacion;
+  expVerificacion= new ExpedienteVerificacion();
 
   constructor(
     public navCtrl: NavController,
