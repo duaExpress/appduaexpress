@@ -1,16 +1,50 @@
-<page-home></page-home>
 
-  <ion-content class="top120" padding>
+<BR>
 
-    <div class="module-title">
-      <h2>Verificaciones Valor En Aduana: </h2>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Valor Factura:</B></span>
+      <input [(ngModel)]="expVerificacion.valorFactura" type="checkbox"/>
     </div>
-
-    <div class="row">
-      <div class="col-2 form-group">
-        <span class="label-text"><B>Abierta por:</B></span>
-        <input [(ngModel)]="expVerificacion.valorFactura" type="checkbox"/>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Incoterm:</B></span>
+      <input [(ngModel)]="expVerificacion.incoterm" type="checkbox"/>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Tipo Divisa:</B></span>
+      <input [(ngModel)]="expVerificacion.tipoDivisa" type="checkbox"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Descuentos:</B></span>
+      <input [(ngModel)]="expVerificacion.descuentos" type="checkbox"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Flete:</B></span>
+      <input [(ngModel)]="expVerificacion.flete" type="checkbox"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Seguro:</B></span>
+      <input [(ngModel)]="expVerificacion.seguro" type="checkbox"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Adición:</B></span>
+      <input [(ngModel)]="expVerificacion.adicion" type="checkbox"/>
+    </div>
+  </div>
 
-</ion-content>
+  <div class="row form-control">
+    <button class="button-new" (click)="guardar()">Guardar</button>
+    <div class="white-space"></div>
+  </div>
