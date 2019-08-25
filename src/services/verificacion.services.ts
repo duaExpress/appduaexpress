@@ -17,10 +17,8 @@ export class VerificacionService{
 
     public saveVerificacion(verificacion: ExpedienteVerificacion){
 
-      const id = this.database.createId();
-
-      this.database.doc(`verificaciones/${id}`).set({
-        id,
+      this.database.doc(`verificaciones/${verificacion.id}`).set({
+        id: verificacion.id,
         valorFactura: this.getValueFromBoolean(verificacion.valorFactura),
         tipoDivisa: this.getValueFromBoolean(verificacion.tipoDivisa),
         incoterm: this.getValueFromBoolean(verificacion.incoterm),
@@ -56,7 +54,6 @@ export class VerificacionService{
         tipoCertificado: this.getValueFromString(verificacion.tipoCertificado)
 
       });
-      return id;
     }
 
     public update(verificacion: ExpedienteVerificacion){

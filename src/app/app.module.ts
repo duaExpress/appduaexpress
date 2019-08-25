@@ -49,6 +49,7 @@ import { IncidenciaComponent } from '../components/incidencia/incidencia';
 import { FicherosClienteService } from '../services/ficherosCliente.service';
 import { FicherosAdminService } from '../services/ficherosAdmin.service';
 import { IncidenciaService } from '../services/incidencia.service';
+import { VerificacionService } from '../services/verificacion.services';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCb7no2ZguQECh7appTgDkrLOrwcW5_9x4",
@@ -122,6 +123,7 @@ defineLocale('en', enGbLocale);
     FicherosClienteService,
     FicherosAdminService,
     IncidenciaService,
+    VerificacionService,
     DatePipe,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]

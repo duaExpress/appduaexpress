@@ -10,6 +10,7 @@ import { finalize } from 'rxjs/operators';
 import { Expediente } from '../../models/expediente';
 import { ExpedienteVerificacion } from '../../models/expedienteVerificacion';
 import { ExpedienteService } from '../../services/expediente.services';
+import { VerificacionService } from '../../services/verificacion.services';
 
 /**
  * Generated class for the VerivalorComponent component.
@@ -25,6 +26,7 @@ export class VerivalorComponent {
 
   idExpediente: string;
   expedienteDocument: AngularFirestoreDocument<Expediente>;
+  verificacionDocument: AngularFirestoreDocument<ExpedienteVerificacion>;
   expediente: Expediente;
   expVerificacion= new ExpedienteVerificacion();
 
@@ -32,22 +34,31 @@ export class VerivalorComponent {
     public navCtrl: NavController,
     public navParams: NavParams,
     public afStorage: AngularFireStorage,
-    public expedienteService: ExpedienteService
+    public expedienteService: ExpedienteService,
+    public verificacionService: VerificacionService
   ) {
+
+    this.expVerificacion.id='0';
 
     this.idExpediente = this.navParams.get("idExpediente");
       if(this.idExpediente != '0' ){
-        this.expedienteDocument = this.expedienteService.getExpediente(this.idExpediente);
-        this.expedienteDocument.valueChanges().subscribe(exp => {
-            this.expediente= exp;
-
+        this.verificacionDocument = this.verificacionService.getVerificacion(this.idExpediente);
+        this.verificacionDocument.valueChanges().subscribe(exp => {
+          if(exp != undefined){
+            this.expVerificacion= exp;
+          }
         })
      }
-
   }
+
 
   guardar(){
-
-
+    if(this.expVerificacion.id != '0' ){
+      this.verificacionService.update(this.expVerificacion);
+    }else{
+      this.expVerificacion.id = this.idExpediente;
+      this.verificacionService.saveVerificacion(this.expVerificacion);
+    }
   }
+
 }
