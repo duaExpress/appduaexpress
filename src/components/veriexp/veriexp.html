@@ -1,4 +1,59 @@
-<!-- Generated template for the VeriexpComponent component -->
-<div>
-  {{text}}
-</div>
+
+<BR><B>Verificación en Declaración en Factura: </B><BR>
+
+  <div class="row">
+
+      <span class="label-text"><B>¿El texto de la declaración en factura por parte del Exportador es correcto? </B></span>
+      <input [(ngModel)]="expVerificacion.textoCorrecto" type="checkbox"/>
+
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Importe Superior a 6.000 euros:</B></span>
+      <input [(ngModel)]="expVerificacion.importeSup6000" type="checkbox"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Número de autorización :</B></span>
+      <input [(ngModel)]="expVerificacion.numAuth" type="checkbox"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Firma:</B></span>
+      <input [(ngModel)]="expVerificacion.firma" type="checkbox"/>
+    </div>
+  </div>
+  <div class="row">
+
+      <span class="label-text"><B>¿Se dispone de una copia de la autorización?</B></span>
+      <input [(ngModel)]="expVerificacion.copiaAuth" type="checkbox"/>
+
+  </div>
+
+  <BR><b>Verificación Certificado:</b><BR><BR>
+
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Origen de la mercancía:</B></span>
+      <input [(ngModel)]="expVerificacion.origenMercancia" type="checkbox"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>País de destino:</B></span>
+      <input [(ngModel)]="expVerificacion.paisDestino" type="checkbox"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 form-group">
+      <span class="label-text"><B>Tipo de certificado:</B></span>
+      <input [(ngModel)]="expVerificacion.tipoCertificado" type="text"/>
+    </div>
+  </div>
+
+  <div class="row form-control">
+    <button class="button-new" (click)="guardar()">Guardar</button>
+    <div class="white-space"></div>
+  </div>
