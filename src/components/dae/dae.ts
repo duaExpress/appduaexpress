@@ -5,6 +5,7 @@ import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firesto
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Expediente } from '../../models/expediente';
 import { ExpedienteService } from '../../services/expediente.services';
+import { ExpedienteSubTipo } from '../../models/global.enum';
 import { Observable } from 'rxjs/Observable';
 import * as moment from 'moment';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
@@ -41,6 +42,7 @@ export class DaeComponent {
       this.idExpediente = this.navParams.get("idExpediente");
       console.log('Id exp:' + this.idExpediente);
       this.expediente = new Expediente();
+      this.expediente.ExpedienteSubTipo=ExpedienteSubTipo.DAE;
       if(this.idExpediente != '0' ){
         this.expedienteDocument = this.expedienteService.getExpediente(this.idExpediente);
         this.expedienteDocument.valueChanges().subscribe(exp => {

@@ -11,6 +11,7 @@ import { finalize } from 'rxjs/operators';
 import { FicherosAdminService } from '../../services/ficherosAdmin.service';
 import { UserService } from '../../services/user.services';
 import { FicheroAdmin } from '../../models/ficheroAdmin';
+import { ExpedienteSubTipo } from '../../models/global.enum';
 
 
 /**

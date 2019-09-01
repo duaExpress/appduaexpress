@@ -9,6 +9,8 @@ import { Observable } from 'rxjs/Observable';
 import * as moment from 'moment';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { ExpedienteSubTipo } from '../../models/global.enum';
+
 
 
 @Component({
@@ -35,6 +37,7 @@ export class EntregaDocumentacionComponent {
       this.idExpediente = this.navParams.get("idExpediente");
       console.log('Id exp:' + this.idExpediente);
       this.expediente = new Expediente();
+      this.expediente.ExpedienteSubTipo=ExpedienteSubTipo.DocEntega;
       if(this.idExpediente != '0' ){
         this.expedienteDocument = this.expedienteService.getExpediente(this.idExpediente);
         this.expedienteDocument.valueChanges().subscribe(exp => {
