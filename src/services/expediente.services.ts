@@ -28,12 +28,48 @@ export class ExpedienteService{
         referencia: this.getValueFromString(expediente.referencia),
         numConocimiento: this.getValueFromString(expediente.numConocimiento),
         empresa: this.getValueFromString(expediente.empresa),
-        partida: this.getValueFromString(expediente.partida),
-        fechaVuelo: this.getValueFromString(expediente.fechaVuelo),
-        peso: this.getValueFromNumber(expediente.peso),
         fecha:this.getDateNow(),
         ExpedienteTipo: this.getValueFromString(expediente.ExpedienteTipo),
-        ExpedienteSubTipo: expediente.ExpedienteSubTipo
+        ExpedienteSubTipo: expediente.ExpedienteSubTipo,
+
+        impresionEtiq: this.getValueFromBoolean(expediente.impresionEtiq),
+        bultos: this.getValueFromNumber(expediente.bultos),
+        peso: this.getValueFromNumber(expediente.peso),
+        partida: this.getValueFromString(expediente.partida),
+
+        fechaVuelo: this.getValueFromString(expediente.fechaVuelo),
+        mercanciaEtiq: this.getValueFromBoolean(expediente.mercanciaEtiq),
+        llevaEur1: this.getValueFromBoolean(expediente.llevaEur1),
+        paraduanero: this.getValueFromBoolean(expediente.paraduanero),
+        soivre: this.getValueFromBoolean(expediente.soivre),
+        cites: this.getValueFromBoolean(expediente.cites),
+        fito: this.getValueFromBoolean(expediente.fito),
+        sanidad: this.getValueFromBoolean(expediente.sanidad),
+        sanidadAnimal: this.getValueFromBoolean(expediente.sanidadAnimal),
+        farmacia: this.getValueFromBoolean(expediente.farmacia),
+        dae: this.getValueFromBoolean(expediente.dae),
+
+        almacenRecogida:this.getValueFromString(expediente.almacenRecogida),
+        numPrecinto:this.getValueFromString(expediente.numPrecinto),
+        destinoMercancia:this.getValueFromString(expediente.destinoMercancia),
+        cpDestino: this.getValueFromNumber(expediente.cpDestino),
+
+        numDAE:this.getValueFromString(expediente.numDAE),
+        numDUA:this.getValueFromString(expediente.numDUA),
+        numFactura:this.getValueFromString(expediente.numFactura),
+        closingTime:this.getValueFromString(expediente.closingTime),
+        fechaSalida:this.getValueFromString(expediente.fechaSalida),
+        exportador:this.getValueFromString(expediente.exportador),
+        buqueFecha:this.getValueFromString(expediente.buqueFecha),
+        carpetaFecha:this.getValueFromString(expediente.carpetaFecha),
+        bandera:this.getValueFromString(expediente.bandera),
+
+        ubicacion:this.getValueFromString(expediente.ubicacion),
+        destino:this.getValueFromString(expediente.destino),
+        consignatario:this.getValueFromString(expediente.consignatario),
+        contenedores:this.getValueFromString(expediente.contenedores),
+        mercancia:this.getValueFromString(expediente.mercancia),
+        instrucciones:this.getValueFromString(expediente.instrucciones)
       });
       return id;
     }
@@ -45,9 +81,48 @@ export class ExpedienteService{
         referencia: this.getValueFromString(expediente.referencia),
         numConocimiento: this.getValueFromString(expediente.numConocimiento),
         empresa: this.getValueFromString(expediente.empresa),
+        fecha:this.getDateNow(),
+        ExpedienteTipo: this.getValueFromString(expediente.ExpedienteTipo),
+        ExpedienteSubTipo: expediente.ExpedienteSubTipo,
+
+        impresionEtiq: this.getValueFromBoolean(expediente.impresionEtiq),
+        bultos: this.getValueFromNumber(expediente.bultos),
+        peso: this.getValueFromNumber(expediente.peso),
         partida: this.getValueFromString(expediente.partida),
-        fechaVuelo:this.getValueFromString(expediente.fechaVuelo),
-        peso: this.getValueFromNumber(expediente.peso)
+
+        fechaVuelo: this.getValueFromString(expediente.fechaVuelo),
+        mercanciaEtiq: this.getValueFromBoolean(expediente.mercanciaEtiq),
+        llevaEur1: this.getValueFromBoolean(expediente.llevaEur1),
+        paraduanero: this.getValueFromBoolean(expediente.paraduanero),
+        soivre: this.getValueFromBoolean(expediente.soivre),
+        cites: this.getValueFromBoolean(expediente.cites),
+        fito: this.getValueFromBoolean(expediente.fito),
+        sanidad: this.getValueFromBoolean(expediente.sanidad),
+        sanidadAnimal: this.getValueFromBoolean(expediente.sanidadAnimal),
+        farmacia: this.getValueFromBoolean(expediente.farmacia),
+        dae: this.getValueFromBoolean(expediente.dae),
+
+        almacenRecogida:this.getValueFromString(expediente.almacenRecogida),
+        numPrecinto:this.getValueFromString(expediente.numPrecinto),
+        destinoMercancia:this.getValueFromString(expediente.destinoMercancia),
+        cpDestino: this.getValueFromNumber(expediente.cpDestino),
+
+        numDAE:this.getValueFromString(expediente.numDAE),
+        numDUA:this.getValueFromString(expediente.numDUA),
+        numFactura:this.getValueFromString(expediente.numFactura),
+        closingTime:this.getValueFromString(expediente.closingTime),
+        fechaSalida:this.getValueFromString(expediente.fechaSalida),
+        exportador:this.getValueFromString(expediente.exportador),
+        buqueFecha:this.getValueFromString(expediente.buqueFecha),
+        carpetaFecha:this.getValueFromString(expediente.carpetaFecha),
+        bandera:this.getValueFromString(expediente.bandera),
+
+        ubicacion:this.getValueFromString(expediente.ubicacion),
+        destino:this.getValueFromString(expediente.destino),
+        consignatario:this.getValueFromString(expediente.consignatario),
+        contenedores:this.getValueFromString(expediente.contenedores),
+        mercancia:this.getValueFromString(expediente.mercancia),
+        instrucciones:this.getValueFromString(expediente.instrucciones)
       });
     }
 
@@ -86,6 +161,14 @@ export class ExpedienteService{
     private getValueFromNumber(value:number){
       if (value === undefined || value == null){
         return '';
+      } else {
+        return value;
+      }
+    }
+
+    private getValueFromBoolean(value:boolean){
+      if (value === undefined || value == null){
+        return false;
       } else {
         return value;
       }
