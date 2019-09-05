@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Incidencia } from '../models/incidencia';
 import { DatePipe } from '@angular/common';
-import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class IncidenciaService{
@@ -16,9 +16,7 @@ export class IncidenciaService{
     }
 
     public saveIncidencia(incidencia: Incidencia){
-
       const id = this.database.createId();
-
       this.database.doc(`incidencias/${id}`).set({
         id,
         origen: this.getValueFromString(incidencia.origen),
@@ -37,7 +35,6 @@ export class IncidenciaService{
     }
 
     public update(incidencia: Incidencia){
-
       this.database.doc(`incidencias/${incidencia.id}`).update({
         origen: this.getValueFromString(incidencia.origen),
         abiertaPor: this.getValueFromString(incidencia.abiertaPor),
@@ -69,11 +66,11 @@ export class IncidenciaService{
       return this.database.collection(`incidencias`);
     }
 
-    private getDateNow(){
+    public getDateNow(){
       return this.datepipe.transform(new Date(), 'dd-MM-yyyy HH:mm:ss');
     }
 
-    private getValueFromString(value:string){
+    public getValueFromString(value:string){
       if (value === undefined || value == null){
         return '';
       } else {
@@ -81,7 +78,7 @@ export class IncidenciaService{
       }
     }
 
-    private getValueFromNumber(value:number){
+    public getValueFromNumber(value:number){
       if (value === undefined || value == null){
         return '';
       } else {
@@ -89,7 +86,7 @@ export class IncidenciaService{
       }
     }
 
-    private getValueFromBoolean(value:boolean){
+    public getValueFromBoolean(value:boolean){
       if (value === undefined || value == null){
         return false;
       } else {

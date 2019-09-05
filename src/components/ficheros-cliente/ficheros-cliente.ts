@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { NavController, NavParams } from 'ionic-angular';
+//import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireStorage } from 'angularfire2/storage';
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //import { AngularFireStorageReference, AngularFireUploadTask } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
 import { finalize } from 'rxjs/operators';
@@ -78,15 +78,12 @@ export class FicherosClienteComponent {
       this.ficherosCliente = this.ficherosService.getFicherosExpediente(this.idExpediente).valueChanges();
   }
 
-
   upload(event) {
-
     this.ficheroCliente= new FicheroCliente();
     this.ficheroCliente.idExpediente= this.idExpediente;
     this.ficheroCliente.uidCliente=this.localUser.user.uid;
-   // console.log('Tipo ' + this.tipoFicheroSel);
+    // console.log('Tipo ' + this.tipoFicheroSel);
     this.ficheroCliente.tipoFichero= this.tipoFicheroSel;
-
 
     const id = Math.random().toString(36).substring(2);
     const file = event.target.files[0];

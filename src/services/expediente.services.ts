@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Expediente } from '../models/expediente';
 import { DatePipe } from '@angular/common';
-import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ExpedienteService{
@@ -146,11 +145,11 @@ export class ExpedienteService{
       return this.database.collection(`expedientes`);
     }
 
-    private getDateNow(){
+    public getDateNow(){
       return this.datepipe.transform(new Date(), 'dd-MM-yyyy HH:mm:ss');
     }
 
-    private getValueFromString(value:string){
+    public getValueFromString(value:string){
       if (value === undefined || value == null){
         return '';
       } else {
@@ -158,7 +157,7 @@ export class ExpedienteService{
       }
     }
 
-    private getValueFromNumber(value:number){
+    public getValueFromNumber(value:number){
       if (value === undefined || value == null){
         return '';
       } else {
@@ -166,7 +165,7 @@ export class ExpedienteService{
       }
     }
 
-    private getValueFromBoolean(value:boolean){
+    public getValueFromBoolean(value:boolean){
       if (value === undefined || value == null){
         return false;
       } else {

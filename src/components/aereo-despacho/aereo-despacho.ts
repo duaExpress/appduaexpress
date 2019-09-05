@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Expediente } from '../../models/expediente';
 import { ExpedienteSubTipo } from '../../models/global.enum';
 import { ExpedienteService } from '../../services/expediente.services';
-import { Observable } from 'rxjs/Observable';
-import * as moment from 'moment';
-import { BsLocaleService } from 'ngx-bootstrap/datepicker';
+//import { Observable } from 'rxjs/Observable';
+//import * as moment from 'moment';
+//import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { ExpedienteEditPage } from '../../pages/expediente-edit/expediente-edit';
 

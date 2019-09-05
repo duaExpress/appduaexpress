@@ -4,7 +4,6 @@ import { FicheroCliente } from '../models/ficheroCliente';
 import { DatePipe } from '@angular/common';
 import { ExpedienteSubTipo } from '../models/global.enum';
 
-
 @Injectable()
 export class FicherosClienteService{
 
@@ -12,15 +11,12 @@ export class FicherosClienteService{
   ficherosCliente: AngularFirestoreCollection<any>;
   authUser: any;
 
-
   constructor(public database: AngularFirestore,  public datepipe: DatePipe) {
       this.authUser = JSON.parse(window.localStorage.getItem('user'));
     }
 
    public saveFichero(ficheroCliente: FicheroCliente){
-
       const id = this.database.createId();
-
       this.database.doc(`ficherosCliente/${id}`).set({
         id,
         idExpediente:this.getValueFromString(ficheroCliente.idExpediente),
@@ -31,13 +27,9 @@ export class FicherosClienteService{
       });
     }
 
-
     public getTiposFicheros(tipoExpediente){
-
       let list : any;
-
       switch (tipoExpediente) {
-
         case ExpedienteSubTipo.DespachoAereoImportacion:
             list = ['Factura Comercial', 'Packing List', 'Otros Documentos'];
             break;
@@ -52,7 +44,6 @@ export class FicherosClienteService{
         case ExpedienteSubTipo.DAE:
             list = ['Factura Comercial', 'Etiquetas', 'Documento DAE'];
             break;
-
         default:
             console.log('invalid');
       }
@@ -61,23 +52,21 @@ export class FicherosClienteService{
 
     public deleteFicheroCliente(id){
       this.database.doc(`ficherosCliente/${id}`).delete();
-
     }
 
-    private getDateNow(){
+    public getDateNow(){
       return this.datepipe.transform(new Date(), 'dd-MM-yyyy HH:mm:ss');
     }
 
-
-   public getFicheros():AngularFirestoreCollection<FicheroCliente>{
-    return this.database.collection('ficherosCliente');
-   }
+    public getFicheros():AngularFirestoreCollection<FicheroCliente>{
+      return this.database.collection('ficherosCliente');
+    }
 
     public getFicherosExpediente(id):AngularFirestoreCollection<FicheroCliente>{
       return this.database.collection('ficherosCliente', ref => ref.where('idExpediente', '==', id))
     }
 
-    private getValueFromString(value:string){
+    public getValueFromString(value:string){
       if (value === undefined || value == null){
         return '';
       } else {
@@ -85,7 +74,7 @@ export class FicherosClienteService{
       }
     }
 
-    private getValueFromNumber(value:number){
+    public getValueFromNumber(value:number){
       if (value === undefined || value == null){
         return '';
       } else {

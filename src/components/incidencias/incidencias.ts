@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { NavController, NavParams } from 'ionic-angular';
+//import { AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireStorage } from 'angularfire2/storage';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { finalize } from 'rxjs/operators';
+//import { finalize } from 'rxjs/operators';
 import { IncidenciaService } from '../../services/incidencia.service';
 import { UserService } from '../../services/user.services';
 import { Incidencia } from '../../models/incidencia';
@@ -106,4 +106,3 @@ export class IncidenciasComponent {
   }
 
 }
-

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { ExpedienteVerificacion } from '../models/expedienteVerificacion';
 import { DatePipe } from '@angular/common';
-import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class VerificacionService{
@@ -103,12 +102,11 @@ export class VerificacionService{
       this.database.collection('verificaciones').doc(id).delete();
     }
 
-
-    private getDateNow(){
+    public getDateNow(){
       return this.datepipe.transform(new Date(), 'dd-MM-yyyy HH:mm:ss');
     }
 
-    private getValueFromString(value:string){
+    public getValueFromString(value:string){
       if (value === undefined || value == null){
         return '';
       } else {
@@ -116,7 +114,7 @@ export class VerificacionService{
       }
     }
 
-    private getValueFromNumber(value:number){
+    public getValueFromNumber(value:number){
       if (value === undefined || value == null){
         return '';
       } else {
@@ -124,7 +122,7 @@ export class VerificacionService{
       }
     }
 
-    private getValueFromBoolean(value:boolean){
+    public getValueFromBoolean(value:boolean){
       if (value === undefined || value == null){
         return false;
       } else {

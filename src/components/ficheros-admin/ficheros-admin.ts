@@ -1,18 +1,17 @@
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { NavController, NavParams } from 'ionic-angular';
+//import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireStorage } from 'angularfire2/storage';
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//import { FormBuilder } from '@angular/forms';
 //import { AngularFireStorageReference, AngularFireUploadTask } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
 import { finalize } from 'rxjs/operators';
 import { FicherosAdminService } from '../../services/ficherosAdmin.service';
 import { UserService } from '../../services/user.services';
 import { FicheroAdmin } from '../../models/ficheroAdmin';
-import { ExpedienteSubTipo } from '../../models/global.enum';
-
+//import { ExpedienteSubTipo } from '../../models/global.enum';
 
 /**
  * Generated class for the FicherosClienteComponent component.

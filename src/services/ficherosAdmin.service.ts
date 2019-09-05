@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { FicheroAdmin } from '../models/ficheroAdmin';
 import { DatePipe } from '@angular/common';
-import { ExpedienteSubTipo } from '../models/global.enum';
-
+//import { ExpedienteSubTipo } from '../models/global.enum';
 
 @Injectable()
 export class FicherosAdminService{
@@ -17,9 +16,7 @@ export class FicherosAdminService{
     }
 
    public saveFichero(fileAdmin: FicheroAdmin){
-
       const id = this.database.createId();
-
       this.database.doc(`ficherosAdmin/${id}`).set({
         id,
         idExpediente:this.getValueFromString(fileAdmin.idExpediente),
@@ -31,10 +28,9 @@ export class FicherosAdminService{
 
     public deleteFicheroAdmin(id){
       this.database.doc(`ficherosAdmin/${id}`).delete();
-
     }
 
-    private getDateNow(){
+    public getDateNow(){
       return this.datepipe.transform(new Date(), 'dd-MM-yyyy HH:mm:ss');
     }
 
@@ -42,7 +38,7 @@ export class FicherosAdminService{
       return this.database.collection('ficherosAdmin', ref => ref.where('idExpediente', '==', id))
     }
 
-    private getValueFromString(value:string){
+    public getValueFromString(value:string){
       if (value === undefined || value == null){
         return '';
       } else {
@@ -50,13 +46,12 @@ export class FicherosAdminService{
       }
     }
 
-    private getValueFromNumber(value:number){
+    public getValueFromNumber(value:number){
       if (value === undefined || value == null){
         return '';
       } else {
         return value;
       }
     }
-
 
 }
