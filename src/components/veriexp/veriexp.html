@@ -4,46 +4,31 @@
 <div class="row">
   <div class="col-3 form-group">
     <span class="label-text"><B>¿El texto de la declaración en factura por parte del Exportador es correcto?</B></span>
-    <select class="control-select" [(ngModel)]="expVerificacion.textoCorrecto">
-      <option>SI</option>
-      <option>NO</option>
-    </select>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="expVerificacion.textoCorrecto" />
   </div>
 </div>
 <div class="row">
   <div class="col-3 form-group">
     <span class="label-text"><B>Importe Superior a 6.000 euros:</B></span>
-    <select class="control-select" [(ngModel)]="expVerificacion.importeSup6000">
-      <option>SI</option>
-      <option>NO</option>
-    </select>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="expVerificacion.importeSup6000" />
   </div>
 </div>
 <div class="row">
   <div class="col-3 form-group">
     <span class="label-text"><B>Número de autorización:</B></span>
-    <select class="control-select" [(ngModel)]="expVerificacion.numAuth">
-      <option>SI</option>
-      <option>NO</option>
-    </select>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="expVerificacion.numAuth" />
   </div>
 </div>
 <div class="row">
   <div class="col-3 form-group">
     <span class="label-text"><B>Firma:</B></span>
-    <select class="control-select" [(ngModel)]="expVerificacion.firma">
-      <option>SI</option>
-      <option>NO</option>
-    </select>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="expVerificacion.firma" />
   </div>
 </div>
 <div class="row">
   <div class="col-3 form-group">
     <span class="label-text"><B>¿Se dispone de una copia de la autorización?</B></span>
-    <select class="control-select" [(ngModel)]="expVerificacion.copiaAuth">
-      <option>SI</option>
-      <option>NO</option>
-    </select>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="expVerificacion.copiaAuth" />
   </div>
 </div>
 
@@ -53,28 +38,19 @@
 <div class="row">
   <div class="col-3 form-group">
     <span class="label-text"><B>Origen de la mercancía:</B></span>
-    <select class="control-select" [(ngModel)]="expVerificacion.origenMercancia">
-      <option>SI</option>
-      <option>NO</option>
-    </select>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="expVerificacion.origenMercancia" />
   </div>
 </div>
 <div class="row">
   <div class="col-3 form-group">
     <span class="label-text"><B>País de destino:</B></span>
-    <select class="control-select" [(ngModel)]="expVerificacion.paisDestino">
-      <option>SI</option>
-      <option>NO</option>
-    </select>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="expVerificacion.paisDestino" />
   </div>
 </div>
 <div class="row">
   <div class="col-3 form-group">
     <span class="label-text"><B>Tipo de certificado:</B></span>
-    <select class="control-select" [(ngModel)]="expVerificacion.tipoCertificado">
-      <option>SI</option>
-      <option>NO</option>
-    </select>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="expVerificacion.tipoCertificado" />
   </div>
 </div>
 
