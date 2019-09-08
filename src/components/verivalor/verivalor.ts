@@ -51,7 +51,6 @@ export class VerivalorComponent {
      }
   }
 
-
   guardar(){
     if(this.expVerificacion.id != '0' ){
       this.verificacionService.update(this.expVerificacion);
