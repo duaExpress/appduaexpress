@@ -32,7 +32,6 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Expedientes', component: ExpedientesPage },
-      { title: 'Usuarios', component: UsuariosPage },
       { title: 'Desconectar', component: LogoutPage }
     ];
   }

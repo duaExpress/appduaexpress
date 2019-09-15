@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import { ExpedientesPage } from '../expedientes/expedientes';
 import { UsuariosPage } from '../usuarios/usuarios';
 import { LogoutPage } from '../logout/logout';
+import { UserService } from '../../services/user.services';
 
 @Component({
   selector: 'page-home',
@@ -11,9 +12,23 @@ import { LogoutPage } from '../logout/logout';
 })
 export class HomePage {
 
+  profile : string;
+
   constructor(
-    public navCtrl: NavController
-  ) {}
+    public navCtrl: NavController, public userService : UserService
+  ) {
+
+    console.log('vaaa');
+    this.userService.getUser().subscribe(user => {
+      this.profile = user.profile;
+    })
+
+
+  }
+
+  public isAdmin(){
+    return 'A'=== this.profile;
+  }
 
   public home() {
     this.navCtrl.setRoot(HomePage);
@@ -32,3 +47,4 @@ export class HomePage {
   }
 
 }
+
