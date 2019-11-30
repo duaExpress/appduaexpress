@@ -1,0 +1,17 @@
+<div *ngIf="tieneNumExpediente()">
+
+  <BR>
+    <div class="row form-control">
+      <button class="button-new" (click)="newIndicacion($event)">Nueva Indicación</button>
+      <div class="white-space"></div>
+    </div>
+  <div>
+    <ng2-smart-table [settings]="settings" [source]="indicaciones | async"
+    (userRowSelect)="editIndicacion($event)" (deleteConfirm)="deleteIndicacion($event)">
+    </ng2-smart-table>
+
+  </div>
+
+</div>
+
+

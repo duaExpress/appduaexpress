@@ -46,10 +46,17 @@ import { FicherosClienteComponent } from '../components/ficheros-cliente/fichero
 import { FicherosAdminComponent } from '../components/ficheros-admin/ficheros-admin';
 import { IncidenciasComponent } from '../components/incidencias/incidencias';
 import { IncidenciaComponent } from '../components/incidencia/incidencia';
+import { IndicacionesComponent } from '../components/indicaciones/indicaciones';
+import { IndicacionComponent } from '../components/indicacion/indicacion';
+import { ModalComponent } from '../components/modal/modal';
+
 import { FicherosClienteService } from '../services/ficherosCliente.service';
 import { FicherosAdminService } from '../services/ficherosAdmin.service';
 import { IncidenciaService } from '../services/incidencia.service';
+import { IndicacionService } from '../services/indicacion.service';
 import { VerificacionService } from '../services/verificacion.services';
+import { ModalService } from '../services/modal.service';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCb7no2ZguQECh7appTgDkrLOrwcW5_9x4",
@@ -81,6 +88,9 @@ defineLocale('en', enGbLocale);
     FicherosAdminComponent,
     IncidenciasComponent,
     IncidenciaComponent,
+    IndicacionesComponent,
+    IndicacionComponent,
+    ModalComponent,
     VerivalorComponent,
     VeriivaComponent,
     VeriexpComponent
@@ -109,6 +119,7 @@ defineLocale('en', enGbLocale);
     RegisterPage,
     LogoutPage,
     IncidenciaComponent,
+    IndicacionComponent,
     VerivalorComponent,
     VeriivaComponent,
     VeriexpComponent
@@ -123,6 +134,8 @@ defineLocale('en', enGbLocale);
     FicherosClienteService,
     FicherosAdminService,
     IncidenciaService,
+    IndicacionService,
+    ModalService,
     VerificacionService,
     DatePipe,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
