@@ -15,18 +15,17 @@ export class IndicacionService{
       this.authUser = JSON.parse(window.localStorage.getItem('user'));
     }
 
-    public saveIncidencia(indicacion: Indicacion){
+    public saveIndicacion(indicacion: Indicacion){
       const id = this.database.createId();
       this.database.doc(`indicaciones/${id}`).set({
         id,
         texto: this.getValueFromString(indicacion.texto),
         idExpediente: this.getValueFromString(indicacion.idExpediente),
-        fechaInMilis: this.getValueFromNumber(indicacion.fechaInMilis),
+        fecha: this.getDateNow(),
         usuario: this.getValueFromString(indicacion.usuario)
       });
       return id;
     }
-
 
 
     public getIndicacion(documentId: string): AngularFirestoreDocument<Indicacion>{

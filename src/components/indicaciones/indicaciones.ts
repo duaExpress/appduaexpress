@@ -29,14 +29,11 @@ export class IndicacionesComponent {
       columnTitle: 'Acciones',
       position: 'right',
       add: false,
+      edit: false,
       class: 'align-center',
     },
     columns: {
-      id: {
-        title: 'Id',
-        class: 'align-center',
-      },
-        fecha: {
+      fecha: {
         title: 'Fecha',
         class: 'align-center',
       },

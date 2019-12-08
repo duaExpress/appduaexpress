@@ -7,11 +7,19 @@
     </div>
 
 
+    <div class="row">
+      <ion-item>
+        <ion-textarea placeholder="Observación"
+            [(ngModel)]="indicacion.texto" name="texto" autocomplete="on" autocorrect="on"></ion-textarea>
+       </ion-item>
+    </div>
+
 
     <div class="row form-control">
-      <button class="button-new" (click)="editIndicacion()">Guardar</button>
+      <button class="button-new" (click)="saveIndicacion()">Guardar</button>
       <div class="white-space"></div>
     </div>
 
 
 </ion-content>
+

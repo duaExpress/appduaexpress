@@ -18,6 +18,7 @@ export class IndicacionComponent {
   idExpediente : any;
   idIndicacion : any;
   localUser : any;
+  texto : string;
 
   constructor(
     public navCtrl: NavController,
@@ -26,37 +27,19 @@ export class IndicacionComponent {
     public indicacionService: IndicacionService,
     public userService: UserService
   ) {
-    this.idExpediente = this.navParams.get("idExpediente");
-    this.idIndicacion = this.navParams.get("idIncidencia");
+    this.indicacion.idExpediente = this.navParams.get("idExpediente");
     this.localUser = this.userService.getLocalUser();
 
-    if(this.idIndicacion != '0' && this.idIndicacion != undefined){
-      this.indicacinDocument = this.indicacionService.getIndicacion(this.idIndicacion);
-      this.indicacinDocument.valueChanges().subscribe(inc => {
-          this.indicacion= inc;
-      })
-    }else{
+  }
 
-      this.idIndicacion=0;
 
-    }
+  saveIndicacion(){
+
+      this.idExpediente= this.indicacionService.saveIndicacion(this.indicacion);
+      this.navCtrl.pop();
 
   }
 
 
-  editIndicacion(){
-
-    if(this.idIndicacion == '0'){
-
-      this.idExpediente= this.indicacionService.saveIncidencia(this.indicacion);
-
-    }else{
-
-       // this.indicacionService.update(this.indicacion);
-
-    }
-
-    this.navCtrl.pop();
-  }
 
 }
