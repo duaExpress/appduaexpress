@@ -21,7 +21,7 @@ export class IndicacionService{
         id,
         texto: this.getValueFromString(indicacion.texto),
         idExpediente: this.getValueFromString(indicacion.idExpediente),
-        fecha: this.getDateNow(),
+        fecha                                                          : this.getDateNow(),
         usuario: this.getValueFromString(indicacion.usuario)
       });
       return id;

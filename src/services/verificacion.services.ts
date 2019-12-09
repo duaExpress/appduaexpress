@@ -95,7 +95,7 @@ export class VerificacionService{
     }
 
     public getVerificacion(documentId: string): AngularFirestoreDocument<ExpedienteVerificacion>{
-        return this.database.collection('verificaciones').doc(documentId);
+        return  ('verificaciones').doc(documentId);
     }
 
     public deleteVerificacion(id: string){

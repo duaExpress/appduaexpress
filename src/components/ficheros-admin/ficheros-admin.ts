@@ -48,7 +48,7 @@ export class FicherosAdminComponent {
         width: '30%',
         class: 'align-center',
       },
-      nombreFichero: {
+      urlDownload: {
         title: 'Fichero',
         width: '70%',
         class: 'align-center',
@@ -68,16 +68,15 @@ export class FicherosAdminComponent {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public afStorage: AngularFireStorage,
+    public afStorage:  AngularFireStorage,
     public ficherosService: FicherosAdminService,
     public userService: UserService
   ) {
       this.idExpediente = this.navParams.get("idExpediente");
       this.localUser = this.userService.getLocalUser();
       console.log('UID: ' + this.localUser.user.uid);
-      this.ficherosAdmin = this.ficherosService.getFicherosExpediente(this.idExpediente).valueChanges();
+      this.ficherosAdmin=this.ficherosService.getFicherosFromExpediente(this.idExpediente);
   }
-
 
   upload(event) {
 
@@ -96,6 +95,7 @@ export class FicherosAdminComponent {
     // get notified when the download URL is available
     task.snapshotChanges().pipe(
         finalize(() => (this.downloadURL = fileRef.getDownloadURL()).subscribe((urlObs) => {
+          console.log('ruta: ' + urlObs  );
           if(this.ficheroAdmin.urlDownload == undefined || this.ficheroAdmin.urlDownload==''){
               this.ficheroAdmin.nombreFichero = file.name;
               this.ficheroAdmin.urlDownload = filePath;
