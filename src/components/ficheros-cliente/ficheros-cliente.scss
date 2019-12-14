@@ -52,6 +52,11 @@ ficheros-cliente {
     background-repeat: no-repeat;
   }
 
+  .icon-cloud-download {
+    background-image: url("../../assets/imgs/icons/cloud-download.svg");
+    background-repeat: no-repeat;
+  }
+
   ng2-smart-table-title > a {
     color: #FFFFFF !important;
   }
@@ -71,5 +76,9 @@ ficheros-cliente {
 
   .ng2-smart-title {
     text-align: center !important;
+  }
+
+  .padding-left-35 {
+    padding-left: 35px;
   }
 }

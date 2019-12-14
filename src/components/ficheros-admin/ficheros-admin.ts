@@ -50,25 +50,13 @@ export class FicherosAdminComponent {
     columns: {
       tipoFichero: {
         title: 'Tipo',
-        width: '20%',
+        width: '25%',
         class: 'align-center',
       },
       nombreFichero: {
-        title: 'Nombre',
-        width: '20%',
+        title: 'Fichero',
+        width: '60%',
         class: 'align-center',
-      },
-      urlDownload: {
-        title: 'Ruta relativa',
-        width: '40%',
-        class: 'align-center',
-        type: 'html',
-        filter: false,
-        valuePrepareFunction: (value) => {
-          return value ? '<center><a href="' + value + '" target="_blank">' + 
-                            '<span class="icon-cloud-download"><span class="padding-left-35">Descargar</span></span></a></center>' 
-                        : '';
-        },
       }
     },
     delete :{
