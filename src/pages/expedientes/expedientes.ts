@@ -63,13 +63,13 @@ export class ExpedientesPage {
         class: 'align-center',
       }
     },
-    edit:{
-      confirmSave:true,
+    edit: {
+      confirmSave: true,
       editButtonContent: '<center class="icon-edit">Editar</center>',
       saveButtonContent: '<center class="icon-acept">Aceptar</center>',
       cancelButtonContent: '<center class="icon-close">Cancelar</center>'
     },
-    delete :{
+    delete: {
       confirmDelete: true,
       deleteButtonContent: '<center class="icon-trash">Borrar</center>',
       cancelButtonContent: '<center class="icon-close">Cancelar</center>'

@@ -12,22 +12,20 @@ import { UserService } from '../../services/user.services';
 })
 export class HomePage {
 
-  profile : string;
+  profile: string;
 
   constructor(
-    public navCtrl: NavController, public userService : UserService
+    public navCtrl: NavController, public userService: UserService
   ) {
-
-    console.log('vaaa');
     this.userService.getUser().subscribe(user => {
-      this.profile = user.profile;
+      if (user) {
+        this.profile = user.profile;
+      }
     })
-
-
   }
 
-  public isAdmin(){
-    return 'A'=== this.profile;
+  public isAdmin() {
+    return 'A' === this.profile;
   }
 
   public home() {

@@ -2,18 +2,54 @@
 
 
 <div *ngIf="tieneNumExpediente()">
-  <BR><b>Tipo de Fichero a subir: </b> <input type="text" [(ngModel)]="tipoFicheroSel" class="form-control" required />
-   <input type="file" (change)="upload($event)" />{{ uploadPercent | async }}%
-   <BR> Ficheros subidos: <BR>
-  <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
-
-  <BR>
-  <div>
-    <ng2-smart-table [settings]="settings" [source]="ficherosAdmin | async" (deleteConfirm)="deleteFichero($event)">
-    </ng2-smart-table>
+  <div class="row">
+    <div class="col-6">
+        <br />
+      <b>Fichero a subir:</b>
+      <input type="text" [(ngModel)]="tipoFicheroSel" class="form-control" required />
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-6">
+      <br />
+      <input type="file" (change)="upload($event)" class="form-control" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <br />
+      <b>Status: </b> {{ uploadPercent | async }} %
+    </div>
+  </div>
+    
+  <div class="row">
+    <div class="col-12">
+      <a [href]="downloadURL | async" target="_blank"> {{ downloadURL | async }}</a>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12">
+      <br />
+      <b>Ficheros subidos:</b>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <ng2-smart-table 
+        [settings]="settings" 
+        [source]="ficherosAdmin | async" 
+        (deleteConfirm)="deleteFichero($event)"
+        (custom)="onFilesAdminCustom($event)">
+      </ng2-smart-table>
+    </div>
+    </div>
 </div>
 
 <div *ngIf="!tieneNumExpediente()">
-  <BR><B>Guarde datos del expediente antes de subir ficheros</B>
+  <br />
+  <b>Guarde datos del expediente antes de subir ficheros</b>
 </div>

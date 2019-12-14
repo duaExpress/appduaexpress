@@ -40,24 +40,41 @@ export class FicherosAdminComponent {
       position: 'right',
       add: false,
       edit: false,
+      delete: true,
       class: 'align-center',
+      custom: [{
+        name: 'download',
+        title: '<center><span class="icon-cloud-download"><span class="padding-left-35">Descargar</span></span></center>'
+      }],
     },
     columns: {
       tipoFichero: {
         title: 'Tipo',
-        width: '30%',
+        width: '20%',
+        class: 'align-center',
+      },
+      nombreFichero: {
+        title: 'Nombre',
+        width: '20%',
         class: 'align-center',
       },
       urlDownload: {
-        title: 'Fichero',
-        width: '70%',
+        title: 'Ruta relativa',
+        width: '40%',
         class: 'align-center',
+        type: 'html',
+        filter: false,
+        valuePrepareFunction: (value) => {
+          return value ? '<center><a href="' + value + '" target="_blank">' + 
+                            '<span class="icon-cloud-download"><span class="padding-left-35">Descargar</span></span></a></center>' 
+                        : '';
+        },
       }
     },
     delete :{
       confirmDelete: true,
-      deleteButtonContent: '<center class="icon-trash">Borrar</center>',
-      cancelButtonContent: '<center class="icon-close">Cancelar</center>'
+      deleteButtonContent: '<center><span class="icon-trash"><span class="padding-left-35">Borrar</span></span></center>',
+      cancelButtonContent: '<center><span class="icon-close"><span class="padding-left-35">Cancelar</span></span></center>'
     },
     attr: {
       class: 'table table-bordered'
@@ -74,15 +91,13 @@ export class FicherosAdminComponent {
   ) {
       this.idExpediente = this.navParams.get("idExpediente");
       this.localUser = this.userService.getLocalUser();
-      console.log('UID: ' + this.localUser.user.uid);
-      this.ficherosAdmin=this.ficherosService.getFicherosFromExpediente(this.idExpediente);
+      this.ficherosAdmin = this.ficherosService.getFicherosFromExpediente(this.idExpediente);
   }
 
   upload(event) {
-
     this.ficheroAdmin= new FicheroAdmin();
-    this.ficheroAdmin.idExpediente= this.idExpediente;
-    this.ficheroAdmin.tipoFichero= this.tipoFicheroSel;
+    this.ficheroAdmin.idExpediente = this.idExpediente;
+    this.ficheroAdmin.tipoFichero = this.tipoFicheroSel;
 
     const id = Math.random().toString(36).substring(2);
     const file = event.target.files[0];
@@ -94,17 +109,15 @@ export class FicherosAdminComponent {
     this.uploadPercent = task.percentageChanges();
     // get notified when the download URL is available
     task.snapshotChanges().pipe(
-        finalize(() => (this.downloadURL = fileRef.getDownloadURL()).subscribe((urlObs) => {
-          console.log('ruta: ' + urlObs  );
-          if(this.ficheroAdmin.urlDownload == undefined || this.ficheroAdmin.urlDownload==''){
-              this.ficheroAdmin.nombreFichero = file.name;
-              this.ficheroAdmin.urlDownload = filePath;
-              this.ficherosService.saveFichero(this.ficheroAdmin);
-              //console.log('guardado');
-            }
-        })
-        )
-     ).subscribe()
+      finalize(() => (this.downloadURL = fileRef.getDownloadURL()).subscribe((urlObs) => {
+        if (this.ficheroAdmin.urlDownload == undefined || this.ficheroAdmin.urlDownload == '') {
+          this.ficheroAdmin.nombreFichero = file.name;
+          this.ficheroAdmin.tipoFichero = file.type;
+          this.ficheroAdmin.urlDownload = filePath;
+          this.ficherosService.saveFichero(this.ficheroAdmin);
+        }
+      }))
+     ).subscribe();
   }
 
   tieneNumExpediente(){
@@ -121,6 +134,11 @@ export class FicherosAdminComponent {
     } else {
       event.confirm.reject();
     }
+  }
+
+  onFilesAdminCustom(event) {
+    let  win = window.open(event.data.urlDownload,'_blank');
+    win.focus();
   }
 
 }
