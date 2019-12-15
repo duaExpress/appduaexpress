@@ -40,6 +40,7 @@ import { DaeComponent } from '../components/dae/dae';
 import { VerivalorComponent } from '../components/verivalor/verivalor';
 import { VeriivaComponent } from '../components/veriiva/veriiva';
 import { VeriexpComponent } from '../components/veriexp/veriexp';
+import { ServiciosComponent } from '../components/servicios/servicios';
 
 import { EntregaDocumentacionComponent } from '../components/entrega-documentacion/entrega-documentacion';
 import { FicherosClienteComponent } from '../components/ficheros-cliente/ficheros-cliente';
@@ -55,6 +56,7 @@ import { FicherosAdminService } from '../services/ficherosAdmin.service';
 import { IncidenciaService } from '../services/incidencia.service';
 import { IndicacionService } from '../services/indicacion.service';
 import { VerificacionService } from '../services/verificacion.services';
+import { ServicioService } from '../services/servicio.service';
 import { ModalService } from '../services/modal.service';
 
 
@@ -93,7 +95,8 @@ defineLocale('en', enGbLocale);
     ModalComponent,
     VerivalorComponent,
     VeriivaComponent,
-    VeriexpComponent
+    VeriexpComponent,
+    ServiciosComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +125,8 @@ defineLocale('en', enGbLocale);
     IndicacionComponent,
     VerivalorComponent,
     VeriivaComponent,
-    VeriexpComponent
+    VeriexpComponent,
+    ServiciosComponent
   ],
   providers: [
     StatusBar,
@@ -137,6 +141,7 @@ defineLocale('en', enGbLocale);
     IndicacionService,
     ModalService,
     VerificacionService,
+    ServicioService,
     DatePipe,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]

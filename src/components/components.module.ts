@@ -14,6 +14,7 @@ import { VeriexpComponent } from './veriexp/veriexp';
 import { IndicacionesComponent } from './indicaciones/indicaciones';
 import { IndicacionComponent } from './indicacion/indicacion';
 import { ModalComponent } from './modal/modal';
+import { ServiciosComponent } from './servicios/servicios';
 @NgModule({
 	declarations: [AereoDespachoComponent,
     AereoImportComponent,
@@ -29,7 +30,8 @@ import { ModalComponent } from './modal/modal';
     VeriexpComponent,
     IndicacionesComponent,
     IndicacionComponent,
-    ModalComponent],
+    ModalComponent,
+    ServiciosComponent],
 	imports: [IonicModule],
 	exports: [AereoDespachoComponent,
     AereoImportComponent,
@@ -45,6 +47,7 @@ import { ModalComponent } from './modal/modal';
     VeriexpComponent,
     IndicacionesComponent,
     IndicacionComponent,
-    ModalComponent]
+    ModalComponent,
+    ServiciosComponent]
 })
 export class ComponentsModule {}

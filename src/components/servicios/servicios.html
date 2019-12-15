@@ -1,0 +1,67 @@
+<div class="row">
+  <span class="label-text"><B>Servicios solicitados:</B></span>
+</div>
+<div class="row">
+<div class="col-3 form-group">
+  <span class="label-text"><B>Despacho Aereo Tránsito Importación</B></span>
+  <input type="checkbox" class="control-checkbox" [(ngModel)]="servicios.despachoAereo" />
+</div>
+</div>
+<div class="row">
+  <div class="col-3 form-group">
+    <span class="label-text"><B>Entrega documentación</B></span>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="servicios.entregaDocumentacion" />
+  </div>
+  </div>
+<div class="row">
+  <div class="col-3 form-group">
+    <span class="label-text"><B>Despacho Marítimo Tránsito Importación</B></span>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="servicios.despachoMaritimoImport" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 form-group">
+    <span class="label-text"><B>Despacho Marítimo Tránsito Exportación</B></span>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="servicios.despachoMaritimoExport" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 form-group">
+    <span class="label-text"><B>Revisión Paraduanera</B></span>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="servicios.revisionParaduanera" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 form-group">
+    <span class="label-text"><B>Recogida de documentos</B></span>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="servicios.recogidaDocumentos" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 form-group">
+    <span class="label-text"><B>Revisión Física</B></span>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="servicios.revisionFisica" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 form-group">
+    <span class="label-text"><B>T2L</B></span>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="servicios.t2l" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 form-group">
+    <span class="label-text"><B>Cuaderno ATA</B></span>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="servicios.ata" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 form-group">
+    <span class="label-text"><B>DAE</B></span>
+    <input type="checkbox" class="control-checkbox" [(ngModel)]="servicios.dae" />
+  </div>
+</div>
+<div class="row form-control">
+  <button class="button-new" (click)="guardar()">Guardar</button>
+  <div class="white-space"></div>
+</div>

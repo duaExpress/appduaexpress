@@ -2,14 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFirestoreDocument } from 'angularfire2/firestore';
 import { AngularFireStorage } from 'angularfire2/storage';
-
-//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-//import { AngularFireStorageReference, AngularFireUploadTask } from 'angularfire2/storage';
-//import { Observable } from 'rxjs/Observable';
-//import { finalize } from 'rxjs/operators';
 import { Expediente } from '../../models/expediente';
 import { ExpedienteVerificacion } from '../../models/expedienteVerificacion';
-//import { ExpedienteService } from '../../services/expediente.services';
 import { VerificacionService } from '../../services/verificacion.services';
 /**
  * Generated class for the VeriexpComponent component.
