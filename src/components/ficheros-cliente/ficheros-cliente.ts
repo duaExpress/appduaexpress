@@ -79,7 +79,7 @@ export class FicherosClienteComponent {
       this.localUser = this.userService.getLocalUser();
       console.log('UID: ' + this.localUser.user.uid);
       this.tiposFichero = this.ficherosService.getTiposFicheros(ExpedienteSubTipo.DespachoAereoExportacion);
-      this.ficherosCliente = this.ficherosService.getFicherosExpediente(this.idExpediente).valueChanges();
+      this.ficherosCliente = this.ficherosService.getFicherosFromExpediente(this.idExpediente);
   }
 
   upload(event) {
