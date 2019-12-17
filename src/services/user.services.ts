@@ -79,6 +79,26 @@ export class UserService{
     });
   }
 
+  public saveUser(userParam: User){
+    const id = this.database.createId();
+    this.database.doc(`users/${id}`).set({
+      id,
+      name: userParam.name,
+      company: userParam.company,
+      tel: userParam.tel,
+      cif: userParam.cif,
+      active: userParam.active,
+      profile: userParam.profile,
+      address: userParam.address,
+      postalCode: userParam.postalCode,
+      city: userParam.city,
+      state: userParam.state,
+      email: userParam.email,
+      emailNotif: userParam.emailNotif
+    });
+    return id;
+  }
+
   public updateUserFromRegistry(userParam: User) {
     this.users.doc(userParam.uid).update({
       //Solo estos campos

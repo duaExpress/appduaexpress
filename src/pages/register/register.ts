@@ -37,7 +37,7 @@ export class RegisterPage {
   authUser: any;
   idUser: any;
   user: AngularFirestoreDocument<any>;
-  usuario : Observable<User> = new Observable<User>();
+  usuario : User ;
   isUserEditable : boolean = false;
 
   constructor(
@@ -56,7 +56,7 @@ export class RegisterPage {
 
     if (this.idUser != null) {
       this.users = userService.getUsers();
-      this.usuario= this.userService.getUserObsById(this.idUser);
+     // this.usuario= this.userService.getUserObsById(this.idUser);
       this.isUserEditable = true;
 
       this.registerForm = formBuilder.group({
@@ -70,7 +70,7 @@ export class RegisterPage {
         tel: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[0-9\- ]*'), Validators.required])],
       });
     } else {
-      this.usuario = null;
+
       this.registerForm = formBuilder.group({
         email: [navParams.get("emailPresent"), Validators.compose([Validators.maxLength(50), Validators.pattern(emailRegex), Validators.required])],
         password: [navParams.get("passwordPresent"), Validators.compose([Validators.maxLength(30), Validators.required])],
@@ -89,9 +89,9 @@ export class RegisterPage {
 
   ionViewDidLoad() {
     if (this.idUser != null ){
-      this.usuario = this.usuario.pipe(
+     // this.usuario = this.usuario.pipe(
         tap(user => this.registerForm.patchValue(user))
-      );
+      //);
     }
   }
 
@@ -109,25 +109,29 @@ export class RegisterPage {
         });
         alert.present();
       } else {
+        console.log('registrando...');
         this.auth.registerUser(this.registerForm.value.email, this.registerForm.value.password).then(
           (success) => {
-            this.authUser = JSON.parse(window.localStorage.getItem('user'));
-            this.user = this.userService.getUserById(this.authUser.uid);
-            this.user.set({
-              email : this.authUser.email,
-              active : true,
-              address : this.registerForm.value.address,
-              cif : this.registerForm.value.cif,
-              city : this.registerForm.value.city,
-              company : this.registerForm.value.company,
-              name : this.registerForm.value.name,
-              postalCode : this.registerForm.value.postalCode,
-              state : this.registerForm.value.state,
-              tel : this.registerForm.value.tel,
-              profile : Profile.User,
-              emailNotif: this.authUser.email
-            });
+          //  this.authUser = JSON.parse(window.localStorage.getItem('user'));
+          //  this.user = this.userService.getUserById(this.authUser.uid);
+          console.log('guardando');
+           //
+            this.usuario = new User();
+            this.usuario.address= this.registerForm.value.address;
+            this.usuario.cif= this.registerForm.value.cif;
+            this.usuario.company= this.registerForm.value.company;
+            this.usuario.email= this.registerForm.value.email;
+            this.usuario.emailNotif= this.registerForm.value.email;
+            this.usuario.name= this.registerForm.value.name;
+            this.usuario.postalCode= this.registerForm.value.postalCode;
+            this.usuario.profile= Profile.User;
+            this.usuario.tel= this.registerForm.value.tel;
+            this.usuario.city= this.registerForm.value.city;
+            this.usuario.active= false;
+            this.usuario.state= this.registerForm.value.state;
 
+            this.userService.saveUser(this.usuario);
+            window.localStorage.setItem('user', JSON.stringify(this.usuario));
             this.navCtrl.setRoot(HomePage);
           });
         }

@@ -4,16 +4,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AuthProvider {
 
-  constructor(
-    private afAuth :  AngularFireAuth,
-  ) {}
+  constructor(public afAuth : AngularFireAuth) {}
 
   // Registro de usuario
   registerUser(email:string, password:string) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-    .then((res)=> {
-      window.localStorage.setItem('user', JSON.stringify(res));
-    }).catch(err=>Promise.reject(err));
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+
   }
 
   // Login de usuario
@@ -21,6 +17,10 @@ export class AuthProvider {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
     .then(user=>Promise.resolve(user))
     .catch(err=>Promise.reject(err))
+  }
+
+  resetPassword(email: string): Promise<void> {
+    return this.afAuth.auth.sendPasswordResetEmail(email);
   }
 
   // Devuelve la session
