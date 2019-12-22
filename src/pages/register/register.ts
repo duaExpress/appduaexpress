@@ -111,12 +111,13 @@ export class RegisterPage {
       } else {
         console.log('registrando...');
         this.auth.registerUser(this.registerForm.value.email, this.registerForm.value.password).then(
-          (success) => {
+          (successUser) => {
           //  this.authUser = JSON.parse(window.localStorage.getItem('user'));
           //  this.user = this.userService.getUserById(this.authUser.uid);
           console.log('guardando');
            //
             this.usuario = new User();
+            this.usuario.uid = successUser.user.uid;
             this.usuario.address= this.registerForm.value.address;
             this.usuario.cif= this.registerForm.value.cif;
             this.usuario.company= this.registerForm.value.company;
@@ -131,7 +132,7 @@ export class RegisterPage {
             this.usuario.state= this.registerForm.value.state;
 
             this.userService.saveUser(this.usuario);
-            window.localStorage.setItem('user', JSON.stringify(this.usuario));
+            window.localStorage.setItem('user', JSON.stringify(successUser));
             this.navCtrl.setRoot(HomePage);
           });
         }

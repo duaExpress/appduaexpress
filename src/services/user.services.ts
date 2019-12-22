@@ -10,13 +10,15 @@ export class UserService{
   user: AngularFirestoreDocument<any>;
   users: AngularFirestoreCollection<any>;
   authUser:any;
+  usuario : User;
 
 
   constructor(public database: AngularFirestore) {
     //Auth user
     this.authUser = JSON.parse(window.localStorage.getItem('user'));
-    //App User
-    if (this.authUser != null) {
+    this.usuario = JSON.parse(window.localStorage.getItem('usuario'));
+
+    if (this.authUser != null && this.authUser.uid != undefined) {
       this.user = this.getUserById(this.authUser.uid);
     }
   }
@@ -37,8 +39,6 @@ export class UserService{
   public getUser() : Observable<User>{
    return this.getUserObsById(this.authUser.user.uid);
   }
-
-
 
   public getUsers(){
     return this.database.collection('/users');
@@ -80,9 +80,7 @@ export class UserService{
   }
 
   public saveUser(userParam: User){
-    const id = this.database.createId();
-    this.database.doc(`users/${id}`).set({
-      id,
+      this.database.doc(`users/${userParam.uid}`).set({
       name: userParam.name,
       company: userParam.company,
       tel: userParam.tel,
@@ -96,7 +94,7 @@ export class UserService{
       email: userParam.email,
       emailNotif: userParam.emailNotif
     });
-    return id;
+    return userParam.uid;
   }
 
   public updateUserFromRegistry(userParam: User) {
@@ -131,6 +129,10 @@ export class UserService{
     });
 
     return result;
+  }
+
+  public isAdmin() {
+    return 'A' === this.usuario.profile;
   }
 
 }

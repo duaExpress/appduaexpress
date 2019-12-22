@@ -4,6 +4,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 import { User } from '../../models/user';
 import { RegisterPage } from '../register/register';
 import { HomePage} from '../home/home';
+import { UserService } from '../../services/user.services';
 
 @IonicPage()
 @Component({
@@ -18,7 +19,8 @@ export class LoginPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public auth : AuthProvider,
-    public alertCtrl : AlertController
+    public alertCtrl : AlertController,
+    public userService: UserService
   ) {
     this.user = new User();
   }
@@ -27,9 +29,14 @@ export class LoginPage {
 
   login() {
     if (this.user.email && this.user.password) {
+
       this.auth.loginUser(this.user.email, this.user.password ).then((user) => {
         localStorage.setItem('user', JSON.stringify(user));
-        this.navCtrl.setRoot(HomePage);
+        this.userService.getUserObsById(user.user.uid).subscribe(usuario => {
+          localStorage.setItem('usuario', JSON.stringify(usuario));
+          this.signin(usuario);
+        })
+
       })
        .catch(err => {
         let alert = this.alertCtrl.create({
@@ -49,11 +56,9 @@ export class LoginPage {
     }
   }
 
-  signin(){
-    this.navCtrl.setRoot(RegisterPage,{
-       emailPresent: this.user.email,
-       passwordPresent: this.user.password,
-       idUser: null
+  signin(usuario : User){
+    this.navCtrl.setRoot(HomePage,{
+       profile: usuario.profile
     });
   }
 

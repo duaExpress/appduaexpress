@@ -3,9 +3,11 @@ import { IonicPage, NavController, NavParams, ActionSheetController, AlertContro
 import { AngularFirestore} from 'angularfire2/firestore';
 import { Expediente } from '../../models/expediente';
 import { ExpedienteService } from '../../services/expediente.services';
+import { UserService } from '../../services/user.services';
 import { Observable } from 'rxjs';
 import { ExpedienteEditPage } from '../expediente-edit/expediente-edit';
 import { ExpedienteSubTipo } from '../../models/global.enum';
+import { User } from '../../models/user';
 
 interface ExpTipo {
   id:string;
@@ -19,6 +21,8 @@ interface ExpTipo {
 })
 
 export class ExpedientesPage {
+
+  user : Observable<User>;
 
   expTipoArray: ExpTipo[] = [
     { id:ExpedienteSubTipo.DespachoAereoExportacion, label:'Despacho Aéreo Exportación' },
@@ -89,7 +93,8 @@ export class ExpedientesPage {
     public database: AngularFirestore,
     public expedienteService : ExpedienteService,
     public actionSheetCtrl: ActionSheetController,
-    public alertCtrl : AlertController
+    public alertCtrl : AlertController,
+    public userService : UserService
   ) {
     this.expedientes = expedienteService.getExpedientes().valueChanges();
   }

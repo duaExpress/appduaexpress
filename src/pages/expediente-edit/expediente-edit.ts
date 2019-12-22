@@ -41,13 +41,14 @@ export class ExpedienteEditPage {
   ) {
 
     this.user = this.userService.getUser();
-  /*  this.user.subscribe(usuario => {
-      console.log(usuario);
-    }) */
+    this.expediente = new Expediente();
 
+    this.user.subscribe(usuario => {
+      console.log(usuario);
       this.idExpediente = this.navParams.get("idExpediente");
       this.tipo = this.navParams.get("tipo");
-      this.expediente = new Expediente();
+
+      this.expediente.empresa = usuario.cif;
       this.expediente.ExpedienteSubTipo=this.tipo;
 
       if(this.idExpediente != '0' ){
@@ -56,6 +57,10 @@ export class ExpedienteEditPage {
             this.expediente= exp;
         })
       }
+
+    })
+
+
     }
 
     isDae(){
