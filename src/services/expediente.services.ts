@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Expediente } from '../models/expediente';
 import { DatePipe } from '@angular/common';
+import { UserService } from '../services/user.services';
+import { User } from '../models/user';
 
 @Injectable()
 export class ExpedienteService{
@@ -9,9 +11,11 @@ export class ExpedienteService{
   expediente: AngularFirestoreDocument<any>;
   expedientes: AngularFirestoreCollection<any>;
   authUser: any;
+  usuario: User;
 
-  constructor(public database: AngularFirestore,  public datepipe: DatePipe) {
+  constructor(public database: AngularFirestore,  public datepipe: DatePipe, public userService : UserService) {
       this.authUser = JSON.parse(window.localStorage.getItem('user'));
+      this.usuario = JSON.parse(window.localStorage.getItem('usuario'));
       this.expedientes = this.getExpedientes();
     }
 
@@ -26,7 +30,8 @@ export class ExpedienteService{
         numExpediente:this.getValueFromString(expediente.numExpediente),
         referencia: this.getValueFromString(expediente.referencia),
         numConocimiento: this.getValueFromString(expediente.numConocimiento),
-        empresa: this.getValueFromString(expediente.empresa),
+        empresa: this.usuario.cif,
+        creador: this.usuario.email,
         fecha:this.getDateNow(),
         ExpedienteTipo: this.getValueFromString(expediente.ExpedienteTipo),
         ExpedienteSubTipo: expediente.ExpedienteSubTipo,
@@ -79,7 +84,6 @@ export class ExpedienteService{
         numExpediente:this.getValueFromString(expediente.numExpediente),
         referencia: this.getValueFromString(expediente.referencia),
         numConocimiento: this.getValueFromString(expediente.numConocimiento),
-        empresa: this.getValueFromString(expediente.empresa),
         fecha:this.getDateNow(),
         ExpedienteTipo: this.getValueFromString(expediente.ExpedienteTipo),
         ExpedienteSubTipo: expediente.ExpedienteSubTipo,
@@ -142,7 +146,12 @@ export class ExpedienteService{
     }
 
     public getExpedientes():AngularFirestoreCollection<Expediente>{
-      return this.database.collection(`expedientes`);
+      if(this.usuario.profile == 'A'){
+        return this.database.collection(`expedientes`);
+      }else{
+        return  this.database.collection('expedientes', ref => ref.where('empresa', '==', this.usuario.cif));
+      }
+
     }
 
     public getDateNow(){

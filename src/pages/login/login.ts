@@ -28,6 +28,9 @@ export class LoginPage {
   ionViewDidLoad() {}
 
   login() {
+
+    localStorage.clear();
+
     if (this.user.email && this.user.password) {
 
       this.auth.loginUser(this.user.email, this.user.password ).then((user) => {

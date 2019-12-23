@@ -9,7 +9,8 @@ export class Expediente{
 	numExpediente: string;
 	referencia: string;
 	numConocimiento: string;
-	empresa: string;
+  empresa: string;
+  creador: string;
 	fecha: string;
 
 	ExpedienteTipo: ExpedienteTipo;
