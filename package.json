@@ -30,6 +30,7 @@
     "angularfire2": "^5.1.0",
     "firebase": "^5.5.7",
     "firebase-tools": "^6.5.3",
+    "grpc": "^1.24.2",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
     "moment": "^2.24.0",
